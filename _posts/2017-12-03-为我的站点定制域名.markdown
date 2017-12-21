@@ -94,17 +94,18 @@ git push origin master  # 上传站点
 
 ## 站点自定义域名
 
-1. 先去 [CloudXNS](https://cloudxns.net) 上, 进入你的域名管理;
-2. 增加一个记录
+* 先去 [CloudXNS](https://cloudxns.net) 上, 进入你的域名管理;
+* 增加一个记录
 
-| 主机记录 | 记录类型 | >>> | 记录值 | >>> |
+| 主机记录 | 记录类型 | balabala | 记录值 | balabala |
 |:----|:----|:----|:----|:----|
 | @ | CNAME | 默认 | username.coding.me | 默认 |
-3. 再去 [Coding](https://coding.net), 进入你的仓库, 选择 Pages 服务
-4. 自定义域名中写下你的域名后, 点击绿色的**绑定**按钮.
-5. 页面上方显示
+
+* 再去 [Coding](https://coding.net), 进入你的仓库, 选择 Pages 服务
+* 自定义域名中写下你的域名后, 点击绿色的**绑定**按钮.
+* 页面上方显示
 > Coding Pages 已经运行在 https://your.domain.name
-6. DONE !
+* DONE !
 
 
 

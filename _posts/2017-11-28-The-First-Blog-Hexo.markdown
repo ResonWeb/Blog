@@ -46,29 +46,29 @@ Hexo 是基于[Node.js](http://nodejs.cn)(你并不需要知道这是个什么�
 ### Node.js
 可以从[ Node.js 官网]下载后解压,然后添加到环境变量中,也可以用下面的方法:
 Wget:
-``` bash
-$ wget https://raw.github.com/creationix/nvm/master/install.sh | sh
+```
+wget https://raw.github.com/creationix/nvm/master/install.sh | sh
 ```
 注:我的电脑上没有curl, 所以就没有用这个方法.
 
 然后重启终端,运行下面的命令:
-``` bash
-$ nvm install stable
+```
+nvm install stable
 ```
 
 ### Hexo
 所有必备的应用程序安装完成后,即可使用 npm 安装 Hexo 了. (npm 是 node.js 的包管理命令)
-``` bash
-$ npm install -g hexo-cli
+```
+npm install -g hexo-cli
 ```
 
 ## 开始建站
 ### 初始化工作目录
 在任意地方运行下面的命令:
 ``` bash
-$ hexo init <folder>
-$ cd <folder>
-$ npm install
+hexo init <folder>
+cd <folder>
+npm install
 ```
 注: `folder` 是你想要将站点放入的本地工作目录,请写出准确的路径(eg: ~/work/hexo)
     以后默认省略 `folder` , 当前工作目录也默认为 `folder`
@@ -82,16 +82,16 @@ source/_posts/ : 里面存放着你写的所有稿件,以后写博文也是编�
 ### 下载 NexT 主题
 运行下面的命令:
 ``` bash
-$ cd themes/
-$ git clone https://github.com/iissnan/hexo-theme-next.git
-$ cd ../
+cd themes/
+git clone https://github.com/iissnan/hexo-theme-next.git
+cd ../
 ```
 注:两个 `cd` 命令只是更换工作目录, 中间的那行是从 git 上克隆一个主题到本地.
 
 ### 参数配置
 主要参数文件为: hexo_site/_config.yml
 ``` bash
-$ vim _config.yml
+vim _config.yml
 ```
 对其中部分参数加以说明:
 
@@ -112,11 +112,11 @@ $ vim _config.yml
 ### 服务器 hexo-server
 若还没有安装这个模块,可以运行下面的命令安装:
 ``` bash
-$ npm install hexo-server --save
+npm install hexo-server --save
 ```
 安装完成后,可以用以下命令开启本地服务器:
 ``` bash
-$ hexo server
+hexo server
 ```
 然后在浏览器地址栏中输入 `localhost:4000/` ,按 `Enter` 就可以看到你的博客了,惊喜不?
 或者按着 `Ctrl`, 点击终端内的地址.
@@ -134,43 +134,43 @@ $ hexo server
 
 shell 角本内容如下:
 ``` 
-$ #! /bin/bash
-$ 
-$ cd ~/work/hexo
-$ hexo clean       # 清空之前产生的页面
-$ hexo g           # 产生新的页面
-$ # hexo s	   # 开启本地网页服务器
-$ 
-$ ###################################################
-$ # Used for uploading the generated "public" 
-$ # directory to ~/work/git/reson-hou.github.io/blog/ 
-$ # with a new git branch, named by "Blog"
-$ ###################################################
-$ 
-$ cd ~/work/git/reson-hou.github.io/
-$ git checkout Blog
-$ 
-$ rm -rf ~/work/git/reson-hou.github.io/blog/*    #为了避免下面的复制产生冲突
-$ cp -r ~/work/hexo/public/* ~/work/git/reson-hou.github.io/blog/
-$ git add blog
-$ git commit       # 这个命令会让你输入提交信息,可使用[-m "new blog"]参数,但不建议使用.
-$ echo "Upload complete!"
-$ 
-$ ###############################################
-$ #  已经上传到本地仓库,下面用于 push 到 GitHub
-$ ###############################################
-$ cd ~/work/git/reson-hou.github.io/
-$ 
-$ # 下面这种做法是将Blog分支与master分支做了衍合
-$ # 但是我并没有直接这么做,因为我想要用Blog分支做测试
-$ # git checkout master
-$ # git merge Blog
-$ # git push origin master
-$ 
-$ # 下面是我真正的做法,若是在浏览器中测试可以了,再手动衍合
-$ git checkout Blog
-$ git push origin Blog:master
-$            
+#! /bin/bash
+
+cd ~/work/hexo
+hexo clean       # 清空之前产生的页面
+hexo g           # 产生新的页面
+# hexo s	   # 开启本地网页服务器
+
+###################################################
+# Used for uploading the generated "public" 
+# directory to ~/work/git/reson-hou.github.io/blog/ 
+# with a new git branch, named by "Blog"
+###################################################
+
+cd ~/work/git/reson-hou.github.io/
+git checkout Blog
+
+rm -rf ~/work/git/reson-hou.github.io/blog/*    #为了避免下面的复制产生冲突
+cp -r ~/work/hexo/public/* ~/work/git/reson-hou.github.io/blog/
+git add blog
+git commit       # 这个命令会让你输入提交信息,可使用[-m "new blog"]参数,但不建议使用.
+echo "Upload complete!"
+
+###############################################
+#  已经上传到本地仓库,下面用于 push 到 GitHub
+###############################################
+cd ~/work/git/reson-hou.github.io/
+
+# 下面这种做法是将Blog分支与master分支做了衍合
+# 但是我并没有直接这么做,因为我想要用Blog分支做测试
+# git checkout master
+# git merge Blog
+# git push origin master
+
+# 下面是我真正的做法,若是在浏览器中测试可以了,再手动衍合
+git checkout Blog
+git push origin Blog:master
+           
 ```
 
 More Info : [https://hexo.io/docs](https://hexo.io/zh-cn/docs/index.html)
