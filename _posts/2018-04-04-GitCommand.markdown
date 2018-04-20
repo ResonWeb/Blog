@@ -1,8 +1,8 @@
 ---
 layout: post
 title: git 小结
-author: ResonWeb
-categories: Git
+categories: 
+  - Git
 tags: 
   - GitHub
 ---
@@ -10,6 +10,7 @@ tags:
 * content
 {:toc}
 
+## OK
 你上传到gitlab上的东西我看到了，这个不是git的主流做法。这样传的话我还要重新添加。
 
 git的作用是多个人同时维护一个软件，非常有效。鉴于以后咱们有可能还要经常一起写程序，使用git能大大提高效率。
