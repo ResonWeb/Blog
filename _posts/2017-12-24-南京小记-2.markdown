@@ -2,10 +2,9 @@
 layout: post
 title: 南京小记(续)
 author: ResonWeb
-categories: 日记
+categories: 游记
 tags:
  - 南京
- - 日记
  - CLHCP
 ---
 

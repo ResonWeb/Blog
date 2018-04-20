@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 南京小记
-categories: 日记
+author: ResonHou
+categories: 游记
 tags:
 - 南京
 - CLHCP
-- 日记
 ---
 
 * content

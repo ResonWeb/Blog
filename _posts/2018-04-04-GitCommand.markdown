@@ -5,13 +5,53 @@ author: ResonHou
 categories: GitHub
 tags:
   - GitHub
+  - SoftWare
 ---
 
 * content
 {:toc}
 
-## OK
+Git作为版本控制工具，有利于多人合作及个人代码的管理。配合使用开放源代码的GitHub远程仓库，可事半功倍！
 <!-- more -->
+# Git常用命令
+Git可以安装在Linux及windows系统，这里就不多说怎么安装了。
+## 1. 仓库初始化
+Git仓库在用户的角度来看，就是一个特定的目录。将一个目录初始化为Git仓库，有两种途径：
+### 1.1 无中生有  
+一个项目的初始，可以使用这种方法，从0开始写起。  
+在系统中新建一个目录（例 ~/sample/ ，也可以是已经存在的目录 ），进入其中。反正确定现在所在的位置（可用pwd命令查看）是你想要创建Git仓库的位置就行了。然后运行命令：  
+```
+git init
+```
+这个命令会创建一个隐藏目录 ~/sample/.git/ ，这标志着当前目录已经是一个Git仓库了。
+### 1.2 克隆（站在已有的肩膀上）
+从一个已经有基础的仓库（一般为远程仓库）克隆一份到本地。命令如下：
+```
+git clone https://github.com/username/repository.git
+```
+该命令会在本地主机生成一个目录，与远程主机的仓库同名。如果要指定不同的本地目录名，可以将目录名作为git clone命令的第二个参数:
+```
+git clone https://.../xxx.git <dirname>
+```
+
+## 2. 日常使用
+```
+git branch -a           # 查看所有分支
+git checkout -b name    # 新建分支
+git status              # 查看git状态
+git add -A              # 缓存所有新更改
+git commit -m "xx"      # 提交更改到本地仓库，"xx"为备注
+git pull <remote repo>  # 拉取远程仓库并合并到本地
+git push origin master:gh-pages
+                        # 推送本地master分支到origin仓库的gh-pages分支
+git remote -v           # 查看远程仓库地址
+git remote add <name> http://xxx/xxx.git
+                        # 添加远程仓库
+```
+
+## 附上师兄写的邮件一封
+注：不是写给我看的
+
 你上传到gitlab上的东西我看到了，这个不是git的主流做法。这样传的话我还要重新添加。
 
 git的作用是多个人同时维护一个软件，非常有效。鉴于以后咱们有可能还要经常一起写程序，使用git能大大提高效率。

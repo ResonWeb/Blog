@@ -1,19 +1,19 @@
 ---
 layout: post
 title: 为我的站点定制域名
+author: ResonHou
 tags:
   - GitHub
   - Coding
   - DomainName
-categories:
-  - HTML-Web
+categories: Computer
 date: 2017-12-03 22:53:48
 ---
 
 * content
 {:toc}
 
-今天用了一天, 终于成功地更改了站点的域名, 用上了我在很久以前就申请的域名——[RESON.EU.ORG](https://www.reson.eu.org). 
+今天用了一天, 终于成功地更改了站点的域名, 用上了我在很久以前就申请的域名——[RESON.EU.ORG](https://www.reson.eu.org).
 
 说来这也是一个并不复杂的过程, 不过是以前选择的DNS并不适用而已.现在我就说一下今天的流程, 以便记录.
 

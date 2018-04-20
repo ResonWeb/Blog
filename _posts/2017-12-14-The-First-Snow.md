@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 2017年的第一场雪
+author: ResonHou
 categories: 若有所思
 tags:
 - 生活笔记
-- 日记
 date: 2017-12-14
 ---
 

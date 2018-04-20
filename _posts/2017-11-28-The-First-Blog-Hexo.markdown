@@ -1,9 +1,9 @@
 ---
 layout: post
 title: The First Blog --Hexo
+author: ResonHou
 date: 2017-11-28 09:47:32
-categories:
-- HTML-Web
+categories: Computer
 tags:
 - HexoLearning
 - PersonalBlog
@@ -26,8 +26,8 @@ tags:
 
 ## 基础
 ### GitHub
-[GitHub](https://github.com)是开源代码的天堂,这里汇聚了各式各样的开源项目,你可以自由的Copy或者提供自己的贡献. 我认识它已经很久了,不过之前只是象征性的玩一下,并不深入. 因为我并没有什么好的东西要在这个地方写,并与大家分享. 虽然我一直想要做一个自己的[个人主页](https://reson-hou.github.io),不过由于内容的不足,只能以一个空壳子的形式放在那里. 
-后来通过由iissnan写的[ProGit](http://iissnan.com/progit/)学习Git这个版本管理工具,然后就控制不住地去看了一下他的个人主页[Vi](http://iissnan.com).被他主页上的动画效果给吸引到了(注:GitHub只提供静态页面,我一个没有学过JavaScript的人,被惊艳到也是可以理解的). 然后顺滕摸瓜,发现他自己写了一个Hexo的模板[NexT](http://theme-next.iissnan.com), 接着就发现了[Hexo](http://hexo.io). 
+[GitHub](https://github.com)是开源代码的天堂,这里汇聚了各式各样的开源项目,你可以自由的Copy或者提供自己的贡献. 我认识它已经很久了,不过之前只是象征性的玩一下,并不深入. 因为我并没有什么好的东西要在这个地方写,并与大家分享. 虽然我一直想要做一个自己的[个人主页](https://reson-hou.github.io),不过由于内容的不足,只能以一个空壳子的形式放在那里.
+后来通过由iissnan写的[ProGit](http://iissnan.com/progit/)学习Git这个版本管理工具,然后就控制不住地去看了一下他的个人主页[Vi](http://iissnan.com).被他主页上的动画效果给吸引到了(注:GitHub只提供静态页面,我一个没有学过JavaScript的人,被惊艳到也是可以理解的). 然后顺滕摸瓜,发现他自己写了一个Hexo的模板[NexT](http://theme-next.iissnan.com), 接着就发现了[Hexo](http://hexo.io).
 
 ### Hexo
 正如上面说的, Hexo 是一个可以批量生产静态博客页面的工具,是前端开发者为了"懒"而开发的自动渲染页面的傻瓜式软件. 但是学习这个工具的过程也是有曲折的,这正是我这篇博文的主要内容.
@@ -41,7 +41,7 @@ Hexo 是基于[Node.js](http://nodejs.cn)(你并不需要知道这是个什么�
 ## 安装开发环境
 首先说明我的开发环境是 Ubuntu 17.10
 并且已经安装过了 Git
-安装过程也可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/index.html) 
+安装过程也可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/index.html)
 
 ### Node.js
 可以从[ Node.js 官网]下载后解压,然后添加到环境变量中,也可以用下面的方法:
@@ -96,7 +96,7 @@ vim _config.yml
 对其中部分参数加以说明:
 
 | 参数名 | 参数说明 |
-|:--|:-----| 
+|:--|:-----|
 | title | 网站标题 |
 | subtitle | 网站副标题 |
 | description | 网站描述,用于搜索引擎检索 |
@@ -133,7 +133,7 @@ hexo server
   4. 用shell角本完成删除原本的博客,复制新的博客页面,完成衍合, push 到 GitHub 上.
 
 shell 角本内容如下:
-``` 
+```
 #! /bin/bash
 
 cd ~/work/hexo
@@ -142,8 +142,8 @@ hexo g           # 产生新的页面
 # hexo s	   # 开启本地网页服务器
 
 ###################################################
-# Used for uploading the generated "public" 
-# directory to ~/work/git/reson-hou.github.io/blog/ 
+# Used for uploading the generated "public"
+# directory to ~/work/git/reson-hou.github.io/blog/
 # with a new git branch, named by "Blog"
 ###################################################
 
@@ -170,7 +170,7 @@ cd ~/work/git/reson-hou.github.io/
 # 下面是我真正的做法,若是在浏览器中测试可以了,再手动衍合
 git checkout Blog
 git push origin Blog:master
-           
+
 ```
 
 More Info : [https://hexo.io/docs](https://hexo.io/zh-cn/docs/index.html)

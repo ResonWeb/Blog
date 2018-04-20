@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EndNote 安装与使用
-author: ResonWeb
+author: ResonHou
 categories: 学术软件教程
 tags:
  - EndNote

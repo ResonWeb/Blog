@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 物理人的信仰
+categories: 若有所思
 tags:
   - 物理
-  - 瞎思考
-categories:
-  - 若有所思
+  - 信仰
+author: ResonHou
 date: 2017-12-01 21:35:25
 ---
 
