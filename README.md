@@ -31,22 +31,22 @@ tags: GitHub
 
 ### 其他目录结构
 
-* _config.yml:
+* _config.yml: jekyll的基本设置参数（键值对），里面的参数取值可以参考[jekyll文档](https://jekyllrb.com/docs/configuration/)。
 
-* feed.xml:
+* feed.xml: 应该是站点地图信息
 
-* _drafts:
+* _drafts: 草稿。尚未完成的博客文章，完成后可移到** /_posts **目录中。
 
-* _includes:
+* _includes: 将页面分块写成的片段。在** /_layouts **目录中的布局页面中使用" ** {% include xxxx.html %} ** "语法引用。
 
-* _layouts:
+* _layouts: 布局。也就是在文章头信息中指明的布局(layout:post)。
 
-* _sass:
+* _sass: 经jekyll处理之前的css样式信息。
 
-* assets:
+* assets: 附属材料。目前仅存放有头像图片。
 
-* css:
+* css: 里面只有一个jekyll处理之前的css主样式文件。完全可以与** /_sass ** 合并。
 
-* js:
+* js: 存放着js脚本文件。
 
-* page:
+* page: 在 **/_layouts**目录中写了四个布局，post用于撰写的文章，page就是用于这个目录中的页面。但要注意，只有在头信息里注明 ** type: page ** 项，这个页面才会显示在index.html中。
