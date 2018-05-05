@@ -2,7 +2,7 @@
 layout: post
 title: git 小结
 author: ResonHou
-categories: GitHub
+categories: Computer
 tags:
   - GitHub
   - SoftWare
