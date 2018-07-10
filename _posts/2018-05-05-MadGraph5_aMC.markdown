@@ -42,7 +42,7 @@ MG5_aMC>install Delphes         # 注意区分大小写，在输入 install 后�
 其他的选项可自行查阅[ MG5 说明书](https://arxiv.org/abs/1405.0301v2)。
 
 ## 使用说明
-> 此文章全篇默认当前目录为 `MG5_aMC_v***/`
+> ** 此文章全篇默认当前目录为 ** `MG5_aMC_v***/`
 
 MadGraph5_aMC 可用于实现指定模型下的任意过程计算，最终给出过程的散射截面，并且产生用于后期分析的事例文件。  
 ### 初级操作
@@ -97,7 +97,7 @@ cd ~/Downloads/MG5_aMC_***/process/pptt/    # 以实际路径为准
 └── VERSION  
 
 | 一级目录 | 内容说明 |
-|:--|:----|
+|:-|:----|
 | ./ | 代表 MG5根目录 |
 | ./bin/ | 目录中存在两个可执行脚本，其中 `mg5` 是一个过时的脚本，其代码指向另一个脚本 `mg5_aMC` 。也就是说两个脚本等价，保留前一个脚本只是为了兼容之前的版本，并给出一行过时提醒。`mg5_aMC` 脚本只是 MG5 程序包的入口，作用是检查一下环境设置，然后调用 `./madgraph/` 目录中的主程序。 |  
 | ./Delphes/   | 目录只有在 `install Delphes` 之后才会出现。插件程序包将逐渐移至 `HEPTools/` 目录中。|
@@ -108,7 +108,9 @@ cd ~/Downloads/MG5_aMC_***/process/pptt/    # 以实际路径为准
 | ./process/ | 手动添加的目录，用于存储具体计算过程代码 |
 | ./README ./INSTALL | 说明性文件，分别介绍用法和安装过程 |
 
-** 事例目录（如：`process/pptt`）中子目录的说明：**  
+
+
+** 事例目录中子目录的说明：**  
 ./ &nbsp;&nbsp;&nbsp;&nbsp; 指代事例目录，如：`process/pptt`  
 ├── bin &nbsp;&nbsp;&nbsp;&nbsp; 存放可执行文件  
 ├── Cards &nbsp;&nbsp;&nbsp;&nbsp; 存放卡片文件，可以运算代码之前修改  
@@ -119,11 +121,15 @@ cd ~/Downloads/MG5_aMC_***/process/pptt/    # 以实际路径为准
 └── index.html &nbsp;&nbsp;&nbsp;&nbsp; 报告首页，可用浏览器打开  
 
 ### 工作流程的意义
-1. `import model` 命令从 ./models/ 目录中导入一个具体的模型，如标准模型为 `import model sm`
+1. `import model` 命令从 ./models/ 目录中导入一个具体的模型，如标准模型为 `import model sm`  
+
 2. `generate` 是产生一个具体的物理过程，学过费曼图的人应该都知道什么是物理过程的。如经典的正负电子到正负缪子的过程可写为 `generate e+ e- > mu+ mu-`。  
+
 3. `display diagrams` 用来查看过程的费曼图，通常是被省略的。
+
 4. `output ./process/` 用来将代码导出到指定的目录，以便重复使用。  
 以上命令只是用来写出具体计算的代码。因为脚本语言运算的速度太慢，所以只是用脚本语言帮我们去写一个针对特定过程的 C++ 语言代码（即所谓的硬代码）。这种流程在任何事例产生器程序中都通用，FeynArts 是写成了 Fortran 代码，CalcHEP 也是写成了 C++ 代码。  
 对应到物理意义中，以上代码中已经将振幅写好，并已经取了 **模平方** 。执行代码只是用来作相空间积分，但是积分的过程又不能解析计算，所以只能采用 Monte Carlo 模拟的方式。这种方式就需要产生事例，用来模拟出来积分截面。
+
 5. `launch` 命令是 MG5 中附带的一个脚本，用来执行 `./process/XXXX/bin/generate_events` 命令。  
 这一步是开始执行以上代码，不过在做相空间积分，计算出数值结果之前，需要指定模型参数、对撞参数等，如粒子质量、对撞能量、PDF。这些参数分为存放在两个主要的卡片文件中：`param_card.dat` 和 `run_card.dat` 中。
