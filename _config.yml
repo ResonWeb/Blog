@@ -6,12 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: ResonWeb
+title: Welcome to ResonWeb
 keywords: "侯镖锋, ResonHou, Reson"
-description: "侯镖锋： 一名勤勤肯肯，兢兢业业的闲散人士。目前正在读理论物理研究生，您可进入 https://resonweb.github.io 来查看更多的资料。"
+description: "侯镖锋： 一名勤勤肯肯，兢兢业业的闲散人士。目前正在读理论物理研究生，您可进入 https://www.reson.eu.org 来查看更多的资料。"
 brief-intro: Look, It is me!
-baseurl: "/Blog" # the subpath of your site, e.g. /blog
-url: "https://resonweb.github.io" # the base hostname & protocol for your site
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://www.reson.eu.org" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
