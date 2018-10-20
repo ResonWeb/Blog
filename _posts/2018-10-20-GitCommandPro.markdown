@@ -10,11 +10,12 @@ tags:
 * content
 {:toc}
 
-# Git Command Pro.   
-Git命令分为底层命令 (Plumbing) 和高层命令 (Porcelain)，  
-本文主要是看底层命令时的笔记，用来了解Git的内部工作机制。
-<!-- more -->
 
+Git命令分为底层命令 (Plumbing) 和高层命令 (Porcelain)，  
+本文主要是看底层命令时的笔记，用来了解Git的内部工作机制。  
+**常用的Git命令请查看：[Git 小结]({% post_url 2018-04-04-GitCommand %})**
+<!-- more -->
+## Git Command Pro.
 Git 是一套内容寻址文件系统（content-addressable）。  
 ![git1](http://m.qpic.cn/psb?/f886c4c6-2b9e-4782-9c70-2d94918160b2/MfkarezWtHPWA8JHxqQ8BEqu8RhLwBKRFzVEoj4899Y!/b/dEYBAAAAAAAA&bo=3gFHAQAAAAADF6s!&rf=viewer_4)
 ![git2](http://m.qpic.cn/psb?/f886c4c6-2b9e-4782-9c70-2d94918160b2/e6If04IkVwGH10vmVVF8f7oE*dof3Z1hHa1gfEPJuvg!/b/dDUBAAAAAAAA&bo=QwEJAQAAAAADF3g!&rf=viewer_4)
@@ -50,3 +51,12 @@ git log --pretty=oneline    # 显示git日志
     * 120000: 符号链接
     * 160000: Git链接（Gitlink）
 
+## 链接学习
+
+> [参考博客: https://www.howtoing.com/controlling-urls-and-links-in-jekyll/](https://www.howtoing.com/controlling-urls-and-links-in-jekyll/)    
+
+里面有动态链接到自己之前写的博文的方法
+
+
+> 本文由侯镖锋独立撰写  
+> 您可以自由的复制与引用
