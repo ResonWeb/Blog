@@ -13,7 +13,7 @@ tags:
 
 Git命令分为底层命令 (Plumbing) 和高层命令 (Porcelain)，  
 本文主要是看底层命令时的笔记，用来了解Git的内部工作机制。  
-**常用的Git命令请查看：[Git 小结]({% post_url 2018-04-04-GitCommand %})**
+**常用的Git命令请查看：[Git 小结]({{ site.baseurl }}/{% post_url 2018-04-04-GitCommand %})**
 <!-- more -->
 ## Git Command Pro.
 Git 是一套内容寻址文件系统（content-addressable）。  
