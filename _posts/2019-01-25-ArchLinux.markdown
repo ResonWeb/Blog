@@ -1,20 +1,35 @@
 ---
 layout: post
-title: Git Command Pro
+title: ArchLinux
 author: ResonHou
 categories: Computer
 tags:
- - Github
+ - ArchLinux
+ - Manjaro
 ---
 
 * content
 {:toc}
 
 
-Git命令分为底层命令 (Plumbing) 和高层命令 (Porcelain)，  
-本文主要是看底层命令时的笔记，用来了解Git的内部工作机制。  
 **常用的Git命令请查看：[Git 小结]({{ site.baseurl }}/{% post_url 2018-04-04-GitCommand %})**
 <!-- more -->
+
+```
+sudo vi /etc/pacman.d/mirrorlist
+sudo pacman -Syu	# If something goes wrong, like "error: failed to commit transaction (conflicting fils)"
+			# Then use the following commands
+sudo pacman -Qo *** 	# Where * is the error file's absolutly path
+sudo pacman -Rc		# Do this, But remind you must know what you are doing. Then upgrade you system
+sudo pacman -Syu
+```
+```
+sudo pacman -S vim git zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+vim .zshrc
+```
+
+
 ## Git Command Pro.
 Git 是一套内容寻址文件系统（content-addressable）。  
 ![git1](http://m.qpic.cn/psb?/f886c4c6-2b9e-4782-9c70-2d94918160b2/MfkarezWtHPWA8JHxqQ8BEqu8RhLwBKRFzVEoj4899Y!/b/dEYBAAAAAAAA&bo=3gFHAQAAAAADF6s!&rf=viewer_4)
