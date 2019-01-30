@@ -10,10 +10,12 @@ tags:
 
 * content
 {:toc}
+最终，还是选择了向现实屈服，Manjaro做桌面版，还缺少软件的支持。我只是一个普通用户，还是选择Xubuntu吧。
+
+<!-- more -->
 
 最近可能是我自己的内心又浪起来了。加上我的笔记本在经过了如此长时间的催残，Windows使得它已经不能流畅地工作了，所以我现在决定，开始用[Manjaro](https://manjaro.org/)([目前非常流行的Linux发行版](https://distrowatch.com/dwres.php?resource=popularity))。如下记录了自我升(zhe)华(mo)的历程。  
 
-<!-- more -->
 **Manjaro** 是基于ArchLinux的发行版，优点上包管理工具继承了ArchLinux的滚动更新机制。界面优化还算可以，有多种图形界面可以选择。这里我选择Manjaro-Xfce版，因为Xfce4在保有相对优秀的图形界面的同时，点用更少的系统资源，也就里所谓的轻桌面。
 
 如果你的机子好一些，或是从Gnome过来的，可以选择相对更漂亮的gnome桌面版。  
