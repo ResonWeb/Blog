@@ -4,7 +4,7 @@ title: Git Command Pro
 author: ResonHou
 categories: Computer
 tags:
- - Github
+ - GitHub
 ---
 
 * content

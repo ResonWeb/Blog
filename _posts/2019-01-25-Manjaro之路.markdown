@@ -4,13 +4,13 @@ title: Manjaro之路
 author: ResonHou
 categories: Computer
 tags:
- - ArchLinux
+ - Linux
  - Manjaro
 ---
 
 * content
 {:toc}
-最终，还是选择了向现实屈服，Manjaro做桌面版，还缺少软件的支持。我只是一个普通用户，还是选择Xubuntu吧。
+最终，还是选择了向现实屈服，Manjaro做桌面版，还缺少软件的支持，pacman包管理工具我还是用不习惯。我只是一个普通用户，最终还是选择Linux Mint吧。
 
 <!-- more -->
 

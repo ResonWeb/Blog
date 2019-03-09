@@ -1,0 +1,86 @@
+---
+layout: post
+title: Mint之路
+author: ResonHou
+categories: Computer
+tags:
+ - Linux
+ - Mint
+---
+
+* content
+{:toc}
+Linux Mint 是基于 Ubuntu 的发行版，而 Ubuntu 是基于 Debian 的，所以它们的包管理工具也就都是apt。这就是我改用这个发行版的原因。  
+作为排名第二（[Linux发行版使用排名](https://distrowatch.com/dwres.php?resource=popularity)）的Linux发行版，其有着开箱即用的明显优势。体验后发现其对非英语系统的支持也是非常出色的。
+
+常用快捷键：
+```
+Print           # 截屏
+Shift+Print     # 对选区截屏
+Alt + Print     # 对当前窗口截屏
+# e如果要将截屏放到剪贴板，在相应命令前加 Ctrl
+```
+<!-- more -->
+
+[**Linux Mint**](https://www.linuxmint.com)是基于 Ubuntu 的发行版，界面优化还算可以，有多种图形界面可以选择。这里我选择 Mint 官方版，采用的是 Cinnamon 桌面环境。如下记录了自我升(zhe)华(mo)的历程。  
+
+## 下载安装
+* 下载地址：https://www.linuxmint.com/download.php
+* 安装方式与 Ubuntu 一样，所以不再赘述。
+
+## 安装Tex
+一定要记得安装在自己的家目录里(例：`~/Programs/texlive`)，不然会出现`tlmgr`没有权限，如果用`sudo`又没有`tlmgr`命令的尴尬境地。  
+* 到清华镜像下载iso：https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/
+* 挂载好之后运行：      `install-tl -gui=perltk`
+* 按最后提示配置环境变量
+* 设置CTAN源(华中科技大学):           `tlmgr option repository http://mirror.hust.edu.cn/CTAN/systems/texlive/tlnet`
+* 视情况使用参数：`tlmgr update [--self --all --reinstall-forcibly-removed --list]`
+* 下载安装TexStudio：   `sudo apt install texstudio`
+* 配置TexStudio里的命令路径。
+
+> 手动安装宏包  
+
+* 下载宏包
+* 将 .sty 或是 .cls 放入目录：`~/Programs/texlive/texmf-local/tex/latex/local`
+* 更新包库，运行命令：    `texhash`
+
+## 使用Zsh
+> 方式参看：[Manjaro之路:install-zsh]({{ site.baseurl }}/{% post_url 2019-01-25-Manjaro之路 %}/#install-zsh)   
+
+**注意**：需先下载git
+
+## 安装星际译王
+`sudo apt install stardict `  
+安典下载地址：http://download.huzheng.org/zh_CN/  
+我现在使用的字典：  
+1. 懒虫简明汉英(英汉)词典
+2. 21世纪英汉汉英双向字典
+3. 计算机词汇
+
+## 安装 Jaxodraw (费曼图)
+下载地址：http://jaxodraw.sourceforge.net/download/bin.html  
+http://jaxodraw.sourceforge.net/download/axodraw4j.html  
+下载二进制文件之后，记得下载`axodraw4j`，这是一个LaTeX宏包。
+
+Mint自带有jre，所以下载预编绎代码就好了，解压后直接双击`jaxodraw-XXX.jar`就行了，也可以命令行运行`java -jar jaxodraw-XXX.jar`来打开。
+
+## 使用python pip
+Mint 自带 python ，但是没有 pip 包，所以先要下载 pip ( Mint19.1 现在默认使用的 python2.7 ，所以默认 pip 为 pip2 ，如果要使用 python3 ，则要下载 pip3 )，然后更改pip源，再下载numpy包。命令如下：
+```
+sudo apt install python-pip
+mkidr ~/.pip
+vim ~/.pip/pip.conf     # 添加内容如下
+pip install numpy
+```
+添加内容：  
+> [global]  
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple  
+[install]  
+trusted-host = mirrors.aliyun.com  
+[list]  
+format=legacy  
+
+
+
+> 本文由侯镖锋独立撰写  
+> 您可以自由的复制与引用
