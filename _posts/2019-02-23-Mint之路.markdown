@@ -37,6 +37,7 @@ Alt + Print     # 对当前窗口截屏
 * 视情况使用参数：`tlmgr update [--self --all --reinstall-forcibly-removed --list]`
 * 下载安装TexStudio：   `sudo apt install texstudio`
 * 配置TexStudio里的命令路径。
+* 特别地，需要在高级选项-`Build`-`Build Options`里，将`Commands`目录项设置成`~/Programs/texlive/bin/x86_64-linux`，不然无法编译包含eps图片的文档。
 
 > 手动安装宏包  
 
