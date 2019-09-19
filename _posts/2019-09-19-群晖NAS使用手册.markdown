@@ -43,7 +43,7 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 流程：  
 1. 登录校园网
 2. 打开浏览器，在地址栏输入:[http://flavour.quickconnect.to](http://flavour.quickconnect.to)  
-![DSM-Login](http://m.qpic.cn/psb?/V10bBsII4Ez9He/B1CEwepFQlyLY*InU5VYWCIKW*zyrmCGvWyJnSdCBtk!/b/dL8AAAAAAAAA&bo=KALEAgAAAAADB84!&rf=viewer_4)
+![DSM-Login](http://m.qpic.cn/psb?/V10bBsII4Ez9He/X2HBd4mjVmJd7v.gxBQa0NqXVNZv.9ZFfpyfvVeVRcY!/b/dFIBAAAAAAAA&bo=YgF6AWIBegEDByI!&rf=viewer_4&t=5)
 3. 输入用户名/密码，即可登录  
 ![DSM-Desktop](http://a1.qpic.cn/psb?/V10bBsII4Ez9He/h2WUnRgq6s7143D44iL1VLG8EdGA9gPXURezdU1Gdw8!/m/dMQAAAAAAAAAnull&bo=xgR1AgAAAAADB5c!&rf=photolist&t=5)
 
@@ -52,11 +52,11 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 
 流程：  
 1. 下载Synology Cloud Station Backup包，并安装。附下载地址：[https://www.synology.cn/zh-cn/support/download/DS918+#utilities](https://www.synology.cn/zh-cn/support/download/DS918+#utilities)  
-![CS-Download](http://a4.qpic.cn/psb?/V10bBsII4Ez9He/Y8r2Y9YnoiTIVOdN6IVmO.W3qGtM1TJmXTFxmllzkmg!/m/dL8AAAAAAAAAnull&bo=LwVNAS8FTQEDByI!&rf=photolist&t=5)
+![CS-Download](http://m.qpic.cn/psb?/V10bBsII4Ez9He/Y8r2Y9YnoiTIVOdN6IVmO.W3qGtM1TJmXTFxmllzkmg!/b/dL8AAAAAAAAA&bo=LwVNAS8FTQEDByI!&rf=viewer_4&t=5)
 2. 打开Backup软件，将显示如下界面。  
-![Start](http://a2.qpic.cn/psb?/V10bBsII4Ez9He/D5rbdOc.0DBB7L3.uAZopkCUjbBdmdNVz.3nfnZZFf4!/m/dAUBAAAAAAAAnull&bo=aAK7AQAAAAADB*I!&rf=photolist&t=5)  
-![BackLogin](http://a3.qpic.cn/psb?/V10bBsII4Ez9He/rEBZxioWMj.z1Or*FrP1gzgMDCTUrCNPBK8WvjwV2vU!/m/dL4AAAAAAAAAnull&bo=aAK9AQAAAAADB*Q!&rf=photolist&t=5)  
-![BackSet](http://a1.qpic.cn/psb?/V10bBsII4Ez9He/cLyqsbYEpCZzHQnYpK*N*D98ep2ZOe7Wo3YJRw3nhAc!/m/dDQBAAAAAAAAnull&bo=awK9AQAAAAADB*c!&rf=photolist&t=5)  
+![Start](http://m.qpic.cn/psb?/V10bBsII4Ez9He/D5rbdOc.0DBB7L3.uAZopkCUjbBdmdNVz.3nfnZZFf4!/b/dAUBAAAAAAAA&bo=aAK7AQAAAAADB*I!&rf=viewer_4&t=5)
+![BackLogin](http://m.qpic.cn/psb?/V10bBsII4Ez9He/rEBZxioWMj.z1Or*FrP1gzgMDCTUrCNPBK8WvjwV2vU!/b/dL4AAAAAAAAA&bo=aAK9AQAAAAADB*Q!&rf=viewer_4&t=5)  
+![BackSet](http://m.qpic.cn/psb?/V10bBsII4Ez9He/cLyqsbYEpCZzHQnYpK*N*D98ep2ZOe7Wo3YJRw3nhAc!/b/dDQBAAAAAAAA&bo=awK9AQAAAAADB*c!&rf=viewer_4&t=5)  
 
 ### 2.3 云服务/Drive
 这种方式主要的功能是使得NAS成为文件同步服务器，组成公司/家庭一体化办公，类似WPS的云办公。比如你在办公室编辑了一个文档，它会在你保存的时候，实时更新到NAS上，然后家里的电脑也和NAS同步，回到家后继续编辑文档。
@@ -78,8 +78,9 @@ ftp登录主要用于命令行操作，如果有需要的可以单独联系我�
 
 不同的操作系统有不同的流程。
 1. GNU/Linux: 以Ubuntu为例  
-![Linux](http://a3.qpic.cn/psb?/V10bBsII4Ez9He/q9OCfAf28jEOOCDXeaMmmRS7QNcfFyMvbKdpdt.ckqA!/m/dFYBAAAAAAAAnull&bo=*wKsAP8CrAADByI!&rf=photolist&t=5)  
-运行下面两条命令，就可以在本地电脑上的`somewhere`目录操作NAS上的文件了。
+![Linux](http://m.qpic.cn/psb?/V10bBsII4Ez9He/q9OCfAf28jEOOCDXeaMmmRS7QNcfFyMvbKdpdt.ckqA!/b/dFYBAAAAAAAA&bo=*wKsAP8CrAADByI!&rf=viewer_4&t=5)  
+
+然后运行下面两条命令，就可以在本地电脑上的`somewhere`目录操作NAS上的文件了。
 ```
 >sudo apt install nfs-comman
 >sudo mount 10.149.21.185:/volume1/docker ~/somewhere
@@ -87,11 +88,11 @@ ftp登录主要用于命令行操作，如果有需要的可以单独联系我�
 
 2. Windows  
 我没有用Windows测试，所以就只能截图了，剩下的交给有需要的人自己探索。  
-![Windows](http://a3.qpic.cn/psb?/V10bBsII4Ez9He/s8tycQlF0ewq3CRTV7UOBUHazzWY8P9eosXzHWHCk2Y!/m/dLYAAAAAAAAAnull&bo=DgPjAg4D4wIDByI!&rf=photolist&t=5)
+![Windows](http://m.qpic.cn/psb?/V10bBsII4Ez9He/s8tycQlF0ewq3CRTV7UOBUHazzWY8P9eosXzHWHCk2Y!/b/dLYAAAAAAAAA&bo=DgPjAg4D4wIDByI!&rf=viewer_4&t=5)
 
 3. Mac  
 我就更没有苹果的Mac系统了。  
-![Mac](http://a1.qpic.cn/psb?/V10bBsII4Ez9He/1Sj*WBrGFLttcnH661dirzes1YIX6clUAuJjS4NTY6c!/m/dIQAAAAAAAAAnull&bo=AQO*AQEDvwEDByI!&rf=photolist&t=5)
+![Mac](http://m.qpic.cn/psb?/V10bBsII4Ez9He/1Sj*WBrGFLttcnH661dirzes1YIX6clUAuJjS4NTY6c!/b/dIQAAAAAAAAA&bo=AQO*AQEDvwEDByI!&rf=viewer_4)
 
 
 
