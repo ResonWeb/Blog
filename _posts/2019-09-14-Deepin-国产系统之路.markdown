@@ -1,0 +1,158 @@
+---
+layout: post
+title: Deepin-国产系统之路
+author: ResonHou
+categories: Computer
+tags:
+ - Linux
+ - Deepin
+---
+
+* content
+{:toc}
+
+Deepin(深度)系统 GNU/Linux发行版是目前操作系统国产化过程中不得不提的一个重要成员, 因为它在全球GNU/Linux发行版中的影响力已经进入了前15名([Linux发行版全球排名](https://distrowatch.com/dwres.php?resource=popularity)). 其它国内发行的GNU/Linux版本还有Ubuntu Kylin等(详看[国产 GNU/Linux 系统](https://distrowatch.com/search.php?ostype=All&category=All&origin=China&basedon=All&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active) In [Distrowatch](https://distrowatch.com)).
+
+
+
+常用快捷键：
+```
+
+```
+<!-- more -->
+多说两句, 虽然也有如华为鸿蒙之类的完全国产的操作系统(尚未谋面), 但是总体来说国产操作系统均是GNU/Linux已有发行版的变种. 但这并不意味着其中带有贬意, 并且应该是值得大家鼓励的. 原因之一是我们不能以狭隘的民族主义来给知识或知识产品划定国界；原因之二是即使影响如GNU, 依然没能使得自己的系统内核成为历史的宠儿. 并且我觉得"拿来主义"本就是人类文明前进的重要手段, 它使得经验的获得更加高效. 关键在于你拿来的东西对于你来说是否是"自由"的, 软件自由的定义参看[GNU官网](http://www.gnu.org/). 因为GNU/Linux是基于[GPL版权协议](http://www.gnu.org/licenses/licenses.html#GPL)发布的, 所以它对于我们来说是完全自由的. 我们只有站在巨人的肩膀上, 才可以使我们更快地看到更远的将来.
+
+
+## 1. 系统下载与安装
+* 下载地址：[https://www.deepin.org/](https://www.deepin.org/)
+* 安装方式: 系统盘制作-BIOS引导项设置-"傻瓜式"安装
+
+## 2. After Installation
+### 应用商店
+深度系统的应用商店简直就是国内用户的福音。首先，我很欣慰，有很多国内软件公司给GNU/Linux系统做适配，并且这个队伍还在增大。其次，虽然有些无良企业坚持不做GNU/Linux适配，但国内用户又重度依赖的软件，深度公司也尽其所能，给出了解决方案。
+
+1. DDE（深度桌面环境）中的[深度原创应用](https://www.deepin.org/original/deepin-appstore/)，使得我们使用系统更加方便，如深度影院，深度录屏等。
+
+2. 良心制作：  
+[WPS Office](https://linux.wps.cn/)：办公必备  
+[福昕PDF阅读器](https://www.foxitsoftware.cn/downloads/)：简洁高效，全球人都在用。  
+网易云：你懂得，年轻人听音乐的追求。  
+有道词典：仍有Bug，不过据说下一版本正在开发中。  
+百度云：惊讶于百度的这波操作，还是表示感谢。  
+米聊：新晋成员。
+> 我突然发现WPS与米聊的背后，都是雷军啊，感谢雷大善人。
+
+3. 感谢深度：使用wine技术，为我们带来了许多惊喜。  
+[QQ]/[TIM]/[微信]/[讯雷极速版]/……  
+以上软件在深度系统下能够使用，与这些软件公司本身无关，是深度在其Windows安装包外层加了一个GNU/Linux系统下仿Windows的虚拟机——wine，才得以解决这些软件在深度系统下的应用。但这只能算是一种折衷的方案，因为这种方案一是不稳定，二是执行效率不高。
+> 马化腾：“就喜欢你看我不爽，又干不死我的样子。”
+
+### 使用Zsh
+Bash shell 作为最默认的基本工具，其安全稳定性及简洁性毋庸置疑。但是少了点个性化，所以用zsh来满足自己的审美, 最主要的是zsh的命令提示很好用.  
+然后oh-my-zsh作为其样式库，用来使用别人写好的主题模板。
+```
+>sudo pacman -S vim git zsh
+>sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+>vim .zshrc
+    # 修改主题，我觉得 "josh" 主题挺好看的,
+    # 但是在DDE终端中,闪电号效果出不来
+    # 改用传统的 "mrtazz"
+>sudo vim /etc/passwd        
+    # 修改默认的Shell
+    # 安装oh-my-zsh时,会自动修改,这一步可省略
+```
+
+### 安装星际译王
+* 安装命令： `sudo apt install stardict `  
+字典下载地址：http://download.huzheng.org/zh_CN/  
+我现在使用的字典：  
+1. 懒虫简明汉英(英汉)词典
+2. 21世纪英汉汉英双向字典
+3. 计算机词汇
+
+### 使用python pip
+
+**注意**:  对于使用`pip`的意义有待商议，因为基于debian的系统在`apt`软件仓库中已经收录了python的库包，可用`sudo apt install python-**`来安装相应的库包。  
+
+系统自带 python ，但是没有 pip，所以先要下载 pip ( 系统现在默认使用的 python2.7 ，所以默认 pip 为 pip2 ，如果要使用 python3 ，则要下载 pip3 )，然后更改pip源(pip2和pip3通用一个pip源文件)，再下载numpy包。命令如下：
+```
+sudo apt install python-pip
+mkidr ~/.pip
+vim ~/.pip/pip.conf     # 添加内容如下
+pip install numpy
+```
+添加内容：  
+> [global]  
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple  
+[install]  
+trusted-host = mirrors.aliyun.com  
+[list]  
+format=legacy  
+
+## 生产工具
+### 安装Tex
+一定要记得安装在自己的家目录里(例：`~/Programs/texlive`)，不然会出现`tlmgr`没有权限，如果用`sudo`又没有`tlmgr`命令的尴尬境地。  
+* 到清华镜像下载iso：https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/
+* 挂载好之后运行：     
+ `sudo apt install perl-tk`  
+`install-tl -gui=perltk`  
+
+* 按最后提示配置环境变量
+* 设置CTAN源(华中科技大学):           `tlmgr option repository http://mirror.hust.edu.cn/CTAN/systems/texlive/tlnet`
+* 视情况使用参数：`tlmgr update [--self --all --reinstall-forcibly-removed --list]`
+* 下载安装TexStudio：   `sudo apt install texstudio`
+* 配置TexStudio里的命令路径。
+* 特别地，需要在`高级选项`-`Build`-`Build Options`里，将`Commands`目录项设置成`~/Programs/texlive/bin/x86_64-linux`，不然无法编译包含eps图片的文档。
+
+> 手动安装宏包  
+
+* 下载宏包
+* 将 .sty 或是 .cls 放入目录：`~/Programs/texlive/texmf-local/tex/latex/local`
+* 更新包库，运行命令：    `texhash`
+
+### Install root(CERN)
+由于Mint是基于Ubuntu的系统，所以其安装流程与[root官网](https://root.cern.ch/)给出的Ubuntu系统安装流程一致。  
+
+root程序会依赖一些库或者软件，[点这里](https://root.cern.ch/build-prerequisites#ubuntu)可以查看Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由于更新迭代，名字产生了变化，所以建议分成多次安装，以免报错。
+```
+        # 这个黑框里是root所依赖的包
+        # 这几条命令易出错，可分解执行，每次少安装两个
+>sudo apt-get install git dpkg-dev cmake g++ gcc
+>sudo apt-get install binutils libx11-dev libxpm-dev libxft-dev
+>sudo apt-get install libxext-dev
+        # 以上为必要组件，以下为建议组件。
+>sudo apt-get install gfortran libssl-dev libpcre3-dev
+>sudo apt-get install libglew-dev libftgl-dev libfftw3-dev
+>sudo apt-get install graphviz-dev libavahi-compat-libdnssd-dev
+>sudo apt-get install libldap2-dev python-dev libkrb5-dev
+>sudo apt-get install libqt4-dev
+        # 以下两行第一行是新版本名字，第二行是系统自带不用安也行。
+>sudo apt install default-libmysqlclient-dev libcfitsio-dev libgsl1-dev
+>sudo apt install libglu1-mesa-dev libxml2-dev
+```
+```
+> mkdir ~/programs/root		
+        # root不建议安装在源码的目录里，而是建议新建一个用于安装root的新目录
+> cd ~/programs/root            
+        # 进入这个新建的目录
+> cmake -Dminuit2=ON -Dfftw3=OFF ~/root-xxxx		 
+        # root-xxxx为你解压的目录，参数是为了安装checkmate作准备。
+> cmake --build . -- -j8 		        
+        # 注意空格，j后面的数字为CPU核数
+	    # Have a big cup of coffee, please!
+> source ~/programs/root/bin/thisroot.sh
+```
+
+### 安装 Jaxodraw (费曼图)
+下载地址：http://jaxodraw.sourceforge.net/download/bin.html  
+http://jaxodraw.sourceforge.net/download/axodraw4j.html  
+下载二进制文件之后，记得下载`axodraw4j`，这是一个LaTeX宏包。
+
+Mint自带有jre，所以下载预编绎代码就好了，解压后直接双击`jaxodraw-XXX.jar`就行了，也可以命令行运行`java -jar jaxodraw-XXX.jar`来打开。
+
+
+
+
+
+> 本文由侯镖锋独立撰写  
+> 您可以自由的复制与引用
