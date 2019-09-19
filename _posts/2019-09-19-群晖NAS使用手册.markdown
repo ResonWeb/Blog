@@ -28,13 +28,16 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 5. 文件共享：NAS上已经开通了一个共享目录，可上传组内共享资源。已上传的私人文件也可以生成分享链接，分享给其他人查看。
 6. ……  
 10. 我明白了以上特点，但是觉得没用，所以选择不开通账户了！
+
 ### 1.2 使用组内NAS有什么限制
+
 1. **牢记**：所有上传的文件必须符合基本道德准则，请勿上传违禁文件！！！
 2. 使用组内NAS最好使用华中师大校园网络登录。但是也非必须，颜师兄的手机网也可以登录。
 3. ……
 
 ## 2. 连接NAS
 ### 2.1 网页版/DSM
+
 这种方式使用浏览器的HTTP协议登录，可以提供图形界面(DiskStation Mananer)，对新用户使用比较友好！
 
 流程：  
@@ -64,16 +67,17 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 ![Drive-Login](http://a2.qpic.cn/psb?/V10bBsII4Ez9He/8UOXvGWLGDg6Bf6CvUkZ5TLbnTJxeQ3kmlQmdVDSlMA!/m/dEkBAAAAAAAAnull&bo=aQK8AQAAAAADB*Q!&rf=photolist&t=5)
 ![Drive-Set](http://a3.qpic.cn/psb?/V10bBsII4Ez9He/oa*tFdk3Xga.kQO45*Hb8B68RYmO86.3kTQgNdrRHr4!/m/dLYAAAAAAAAAnull&bo=aQK6AQAAAAADB*I!&rf=photolist&t=5)
 3. 这个软件会一直在后台运行，实时同步你设置的工作目录。
-### 2.4 ftp
+
+### 2.4 ftp  
 ftp登录主要用于命令行操作，如果有需要的可以单独联系我。
 
-### 2.5 NFS
+### 2.5 NFS  
 > NFS: Network File System  
 
 哈，这个就厉害了。用这种方式就像是在电脑上多了一个磁盘分区，让你可以和管理本地文件一样，方便地操作NAS文件！  
 
 不同的操作系统有不同的流程。
-1. GNU/Linux: 以Ubuntu为例
+1. GNU/Linux: 以Ubuntu为例  
 ![Linux](http://a3.qpic.cn/psb?/V10bBsII4Ez9He/q9OCfAf28jEOOCDXeaMmmRS7QNcfFyMvbKdpdt.ckqA!/m/dFYBAAAAAAAAnull&bo=*wKsAP8CrAADByI!&rf=photolist&t=5)  
 运行下面两条命令，就可以在本地电脑上的`somewhere`目录操作NAS上的文件了。
 ```
@@ -81,11 +85,12 @@ ftp登录主要用于命令行操作，如果有需要的可以单独联系我�
 >sudo mount 10.149.21.185:/volume1/docker ~/somewhere
 ```
 
-2. Windows
-我没有用Windows测试，所以就只能截图了，剩下的交给有需要的人自己探索。
+2. Windows  
+我没有用Windows测试，所以就只能截图了，剩下的交给有需要的人自己探索。  
 ![Windows](http://a3.qpic.cn/psb?/V10bBsII4Ez9He/s8tycQlF0ewq3CRTV7UOBUHazzWY8P9eosXzHWHCk2Y!/m/dLYAAAAAAAAAnull&bo=DgPjAg4D4wIDByI!&rf=photolist&t=5)
-3. Mac
-我就更没有苹果的Mac系统了。
+
+3. Mac  
+我就更没有苹果的Mac系统了。  
 ![Mac](http://a1.qpic.cn/psb?/V10bBsII4Ez9He/1Sj*WBrGFLttcnH661dirzes1YIX6clUAuJjS4NTY6c!/m/dIQAAAAAAAAAnull&bo=AQO*AQEDvwEDByI!&rf=photolist&t=5)
 
 
