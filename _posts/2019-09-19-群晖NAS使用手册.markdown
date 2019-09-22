@@ -10,8 +10,8 @@ tags:
 * content
 {:toc}
 
-NAS（Network Attached Storage：网络附属存储）按字面简单说就是连接在网络上，具有资料存储功能的装置，也就是通常所说的网盘。
-现在组里自己买了一个“群晖”牌儿的NAS，它不但可以提供存储功能，而且自带了一个简易版本的GNU/Linux系统，便于使用与管理。
+NAS（Network Attached Storage：网络附属存储）按字面简单说就是连接在网络上，具有资料存储功能的装置，也就是通常所说的网盘。  
+现在组里自己买了一个“群晖”牌儿的NAS，它不但可以提供存储功能，而且自带了一个简易版本的GNU/Linux系统以及非常实用的一些软件套件，便于我们实现文件的备份、同步、版本控制等一系列非常诱人的功能。  
 我在这里提供一个不太详细的使用说明，希望大家能够快速设置并上手使用！
 
 <!-- more -->
@@ -22,23 +22,25 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 
 1. 存储容量：每个人拥有20G容量的私人网盘，可用于存储私人文件。  
 2. 版本控制：群晖NAS拥有文件版本控制系统，可以记录并恢复文件的10个历史版本。    
-> 备注：只有使用cloud服务(2.2节和2.3节)的两种打开方式可以使用版本控制功能。
+> 备注：只有使用Synology Drive软件才可以用版本控制功能。
+
 3. 文件备份：可以将本地的文件备份到NAS，以防文件丢失，保证数据安全。
 4. 异地办公：实现多台电脑上的文件同步，从而可以在多地不间断连续工作。
-5. 文件共享：NAS上已经开通了一个共享目录，可上传组内共享资源。已上传的私人文件也可以生成分享链接，分享给其他人查看。
-6. ……  
-10. 我明白了以上特点，但是觉得没用，所以选择不开通账户了！
+5. 文件共享：NAS上已经开通了一个名为“docker”的共享目录，可上传组内共享资源。已上传的私人文件也可以生成分享链接，分享给其他人查看。
+6. 不说别的，你想想这东西比一台好电脑还贵，钱花哪里哪里不爽？
+7. ……
+10. 你明白了以上特点，但还是觉得没用，所以选择不开通账户了！
 
 ### 1.2 使用组内NAS有什么限制
 
 1. **牢记**：所有上传的文件必须符合基本道德准则，请勿上传违禁文件！！！
 2. 使用组内NAS最好使用华中师大校园网络登录。但是也非必须，颜师兄的手机网也可以登录。
-3. ……
+3. 想到了再说……
 
 ## 2. 连接NAS
 ### 2.1 网页版/DSM
 
-这种方式使用浏览器的HTTP协议登录，可以提供图形界面(DiskStation Mananer)，对新用户使用比较友好！
+这种方式使用浏览器的HTTP协议登录，可以提供图形界面(DSM: DiskStation Mananer)，对新用户使用比较友好，但是没有版本控制功能！
 
 流程：  
 1. 登录校园网
@@ -46,35 +48,56 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 ![DSM-Login](http://m.qpic.cn/psb?/V10bBsII4Ez9He/X2HBd4mjVmJd7v.gxBQa0NqXVNZv.9ZFfpyfvVeVRcY!/b/dFIBAAAAAAAA&bo=YgF6AWIBegEDByI!&rf=viewer_4&t=5)
 3. 输入用户名/密码，即可登录  
 ![DSM-Desktop](http://a1.qpic.cn/psb?/V10bBsII4Ez9He/h2WUnRgq6s7143D44iL1VLG8EdGA9gPXURezdU1Gdw8!/m/dMQAAAAAAAAAnull&bo=xgR1AgAAAAADB5c!&rf=photolist&t=5)
+4. 桌面看到" FileStation "，单击打开。
+5. 好了，接下来的操作就不用教了！
 
-### 2.2 备份/backup
-顾名思义，是将NAS用作文件备份的磁盘。这种方式注重的是备份，即NAS上只作备份，不作修改。修改是在本地电脑上的文件，只有你想起来的时候，手动地去将本地文件备份到NAS上。这就是一个版本控制的初级形态——手动备份。
+### 2.2 群晖Drive客户端
+
+>客户端支持 **电脑/手机/平板**
+
+电脑客户端可以实现[备份/同步/分享/版本控制]等所有功能。  
+实测移动端 **不能** 实现[同步/备份]！  
+>只有客户端可以使用版本控制。如果你在写毕业论文，你就知道版本控制是多么的有用了！如果你有兴趣，可以看一下我写的[Git 小结]({{ site.baseurl }}/{% post_url 2018-04-04-GitCommand %})，了解一下Git版本控制，Linus大神写的哦！
 
 流程：  
-1. 下载Synology Cloud Station Backup包，并安装。附下载地址：[https://www.synology.cn/zh-cn/support/download/DS918+#utilities](https://www.synology.cn/zh-cn/support/download/DS918+#utilities)  
-![CS-Download](http://m.qpic.cn/psb?/V10bBsII4Ez9He/Y8r2Y9YnoiTIVOdN6IVmO.W3qGtM1TJmXTFxmllzkmg!/b/dL8AAAAAAAAA&bo=LwVNAS8FTQEDByI!&rf=viewer_4&t=5)
-2. 打开Backup软件，将显示如下界面。  
-![Start](http://m.qpic.cn/psb?/V10bBsII4Ez9He/D5rbdOc.0DBB7L3.uAZopkCUjbBdmdNVz.3nfnZZFf4!/b/dAUBAAAAAAAA&bo=aAK7AQAAAAADB*I!&rf=viewer_4&t=5)
-![BackLogin](http://m.qpic.cn/psb?/V10bBsII4Ez9He/rEBZxioWMj.z1Or*FrP1gzgMDCTUrCNPBK8WvjwV2vU!/b/dL4AAAAAAAAA&bo=aAK9AQAAAAADB*Q!&rf=viewer_4&t=5)  
-![BackSet](http://m.qpic.cn/psb?/V10bBsII4Ez9He/cLyqsbYEpCZzHQnYpK*N*D98ep2ZOe7Wo3YJRw3nhAc!/b/dDQBAAAAAAAA&bo=awK9AQAAAAADB*c!&rf=viewer_4&t=5)  
-
-### 2.3 云服务/Drive
-这种方式主要的功能是使得NAS成为文件同步服务器，组成公司/家庭一体化办公，类似WPS的云办公。比如你在办公室编辑了一个文档，它会在你保存的时候，实时更新到NAS上，然后家里的电脑也和NAS同步，回到家后继续编辑文档。
-
-流程与上面的方法相似：
-1. 下载Synology Cloud Station Drive包，并安装。附下载地址：[https://www.synology.cn/zh-cn/support/download/DS918+#utilities](https://www.synology.cn/zh-cn/support/download/DS918+#utilities)  
+1. 根据自己的平台下载Synology Drive Client程序，并安装。苹果iOS系统请自行在APP Store搜索下载。  
+附下载地址：[https://www.synology.cn/zh-cn/support/download/DS918+#utilities](https://www.synology.cn/zh-cn/support/download/DS918+#utilities)  
+![CS-Download](http://m.qpic.cn/psb?/V10bBsII4Ez9He/S4Axssou341dXDyrS8VXYIwcTwwVHasLaPRHjvY.sEI!/b/dDIBAAAAAAAA&bo=jQSmAo0EpgIDCSw!&rf=viewer_4&t=5)
 2. 打开Drive软件，将显示如下界面。  
-![Drive-Login](http://a2.qpic.cn/psb?/V10bBsII4Ez9He/8UOXvGWLGDg6Bf6CvUkZ5TLbnTJxeQ3kmlQmdVDSlMA!/m/dEkBAAAAAAAAnull&bo=aQK8AQAAAAADB*Q!&rf=photolist&t=5)
-![Drive-Set](http://a3.qpic.cn/psb?/V10bBsII4Ez9He/oa*tFdk3Xga.kQO45*Hb8B68RYmO86.3kTQgNdrRHr4!/m/dLYAAAAAAAAAnull&bo=aQK6AQAAAAADB*I!&rf=photolist&t=5)
-3. 这个软件会一直在后台运行，实时同步你设置的工作目录。
+![Start](http://m.qpic.cn/psb?/V10bBsII4Ez9He/Z*nEd5MhZpCtCPljEFzKjgS5AqUI75lQ0vkef2zM*RQ!/b/dDUBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4)
+![login](http://m.qpic.cn/psb?/V10bBsII4Ez9He/OYR9sQC63WFe.0NrKUAY2wLlmhR3PgC9fCoXzYGZYHk!/b/dFQBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)
+3. 第一次启动，必须建立一项任务才可以启动。[同步/备份]两种任务都可以的！  
+这里停一下，解释一下[同步/备份]的区别:
+> 同步: 同步的重点在于多地点/多电脑/多用户不间断办公。其中一个电脑的文件变动，与NAS连接的其他所有终端也会跟着改变！当然你可以自己设置同步的规则[双向同步/单向同步]。  
 
-### 2.4 ftp  
-ftp登录主要用于命令行操作，如果有需要的可以单独联系我。
+> 备份: 备份是一种人为主动的版本控制操作，而且一般以单向上传为主，只有本地出错了，才会下载以前的版本！
 
-### 2.5 NFS  
-> NFS: Network File System  
+![BackLogin](http://m.qpic.cn/psb?/V10bBsII4Ez9He/*gPTw9k3ytFC.ir9op9DtQEcLwZYui2Axbi1TC5jdAQ!/b/dE4BAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)  
+4. 这里我们以备份任务开始
 
-哈，这个就厉害了。用这种方式就像是在电脑上多了一个磁盘分区，让你可以和管理本地文件一样，方便地操作NAS文件！  
+![BackSet](http://m.qpic.cn/psb?/V10bBsII4Ez9He/R3Qy*Glw9Sm4B8BZ1DiOa9P4FiwJHng7afhgAh7POi4!/b/dDMBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)   
+在NAS上新建目录，以作本地文件的备份目的地：  
+![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/sgd3NrQck5XQ6qgUzEJKBUCC7R3KudKaxl7UZWwCToE!/b/dFQBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)   
+备份规则：  
+![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/w9z0BFS*MJjOXSJiJh8X8vxV6bw5kOOO0FbLAcmB3qg!/b/dLYAAAAAAAAA&bo=qwI5AqsCOQIDCSw!&rf=viewer_4)  
+下一步：  
+![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/Z52wDLreiSiwXcMkjFw8fJgsJF6Y1RcoCTXvy92aWRQ!/b/dDQBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4)  
+核查备份任务的信息：  
+![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/hiFBPVkIpUfPpEBzt7d835MrQXYab5Rabdg0KsnTB3k!/b/dFYBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)  
+大功告成：  
+![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/hxMyPwYY3FE8v.xEIAeghcPyk4Y8YzC9NiEt*ACrA.A!/b/dLYAAAAAAAAA&bo=oQOTAqEDkwIDCSw!&rf=viewer_4&t=5)  
+
+5. 如果你是以同步开始的，过程与备份差不多，只是下面这张图需要注意：  
+![BackSet](http://m.qpic.cn/psb?/V10bBsII4Ez9He/8j6m0Ka1yQ4haSWdyfT*2SWbQRS4J4Mq*DehlLSkawU!/b/dDcBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)  
+
+6. 这个软件会一直在后台运行，实时同步你设置的工作目录。
+
+### 2.3 另类操作
+1. ftp登录主要用于命令行操作，如果有需要的可以单独联系我。
+2. NFS: Network File System
+哈，这个就厉害了。不过不知道[挂载]这个词的可以不用再看了。
+
+用这种方式就像是在电脑上多了一个磁盘分区，让你可以挂载到本地的目录，和管理本地文件一样方便地操作NAS文件！  
 
 不同的操作系统有不同的流程。
 1. GNU/Linux: 以Ubuntu为例  
@@ -95,7 +118,11 @@ ftp登录主要用于命令行操作，如果有需要的可以单独联系我�
 ![Mac](http://m.qpic.cn/psb?/V10bBsII4Ez9He/1Sj*WBrGFLttcnH661dirzes1YIX6clUAuJjS4NTY6c!/b/dIQAAAAAAAAA&bo=AQO*AQEDvwEDByI!&rf=viewer_4)
 
 
-
+## 问题解答
+### 电脑端有和移动端一样的管理页面么？
+答: 有，打开下面这个网址，登录就可以了！  
+[http://10.149.21.185:5000/?launchApp=SYNO.SDS.Drive.Application](http://10.149.21.185:5000/?launchApp=SYNO.SDS.Drive.Application)  
+或者在DSM里面，点左上角的应用程序，打开Drive。
 
 
 
