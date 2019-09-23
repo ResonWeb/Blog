@@ -73,18 +73,18 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 > 备份: 备份是一种人为主动的版本控制操作，而且一般以单向上传为主，只有本地出错了，才会下载以前的版本！
 
 ![BackLogin](http://m.qpic.cn/psb?/V10bBsII4Ez9He/*gPTw9k3ytFC.ir9op9DtQEcLwZYui2Axbi1TC5jdAQ!/b/dE4BAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)  
-4. 这里我们以备份任务开始
-
+4. 
+   * 这里我们以备份任务开始，其实备份任务，只需保证每台电脑对应一个远程目录就行。
 ![BackSet](http://m.qpic.cn/psb?/V10bBsII4Ez9He/R3Qy*Glw9Sm4B8BZ1DiOa9P4FiwJHng7afhgAh7POi4!/b/dDMBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)   
-在NAS上新建目录，以作本地文件的备份目的地：  
+   * 在NAS上新建目录，以作本地文件的备份目的地：  
 ![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/sgd3NrQck5XQ6qgUzEJKBUCC7R3KudKaxl7UZWwCToE!/b/dFQBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)   
-备份规则：  
+   * 备份规则：  
 ![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/w9z0BFS*MJjOXSJiJh8X8vxV6bw5kOOO0FbLAcmB3qg!/b/dLYAAAAAAAAA&bo=qwI5AqsCOQIDCSw!&rf=viewer_4)  
-下一步：  
+   * 下一步：  
 ![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/Z52wDLreiSiwXcMkjFw8fJgsJF6Y1RcoCTXvy92aWRQ!/b/dDQBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4)  
-核查备份任务的信息：  
+   * 核查备份任务的信息：  
 ![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/hiFBPVkIpUfPpEBzt7d835MrQXYab5Rabdg0KsnTB3k!/b/dFYBAAAAAAAA&bo=pAIXAqQCFwIDCSw!&rf=viewer_4&t=5)  
-大功告成：  
+   * 大功告成：  
 ![set](http://m.qpic.cn/psb?/V10bBsII4Ez9He/hxMyPwYY3FE8v.xEIAeghcPyk4Y8YzC9NiEt*ACrA.A!/b/dLYAAAAAAAAA&bo=oQOTAqEDkwIDCSw!&rf=viewer_4&t=5)  
 
 5. 如果你是以同步开始的，过程与备份差不多，只是下面这张图需要注意：  
@@ -104,7 +104,7 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 ![Linux](http://m.qpic.cn/psb?/V10bBsII4Ez9He/q9OCfAf28jEOOCDXeaMmmRS7QNcfFyMvbKdpdt.ckqA!/b/dFYBAAAAAAAA&bo=*wKsAP8CrAADByI!&rf=viewer_4&t=5)  
 
 然后运行下面两条命令，就可以在本地电脑上的`somewhere`目录操作NAS上的文件了。
-```
+```bash
 >sudo apt install nfs-comman
 >sudo mount 10.149.21.185:/volume1/docker ~/somewhere
 ```

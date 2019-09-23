@@ -35,7 +35,7 @@ git clone https://.../xxx.git <dirname>
 ```
 
 ## 2. 日常使用
-```
+```bash
 git branch -a           # 查看所有分支
 git checkout -b name    # 新建分支
 git status              # 查看git状态

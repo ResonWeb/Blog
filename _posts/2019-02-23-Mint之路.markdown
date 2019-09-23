@@ -14,11 +14,11 @@ Linux Mint 是基于 Ubuntu 的发行版，而 Ubuntu 是基于 Debian 的，所
 作为排名第二（[Linux发行版使用排名](https://distrowatch.com/dwres.php?resource=popularity)）的Linux发行版，其有着开箱即用的明显优势。体验后发现其对非英语系统的支持也是非常出色的。
 
 常用快捷键：
-```
+```bash
 Print           # 截屏
 Shift+Print     # 对选区截屏
 Alt + Print     # 对当前窗口截屏
-# e如果要将截屏放到剪贴板，在相应命令前加 Ctrl
+# 如果要将截屏放到剪贴板，在相应命令前加 Ctrl
 ```
 <!-- more -->
 
@@ -36,7 +36,7 @@ Alt + Print     # 对当前窗口截屏
 
 Bash shell 作为最默认的基本工具，其安全稳定性毋庸置疑。但是少了点个性化，所以用zsh来满足自己的审美。  
 然后oh-my-zsh作为其模板库，用来使用别人写好的主题模板。
-```
+```bash
 sudo pacman -S vim git zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 vim .zshrc                  # 修改主题，我觉得 "josh" 主题挺好看的

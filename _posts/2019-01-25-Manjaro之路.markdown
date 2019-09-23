@@ -29,7 +29,7 @@ Manjaro是一个开箱可用的发行版，所以安装好了已经，并不需�
 
 ### Upgraded
 由于ArchLinux是使用的滚动更新包管理机制，原则上说你可以从任意一个起点来更新。但是这中间总是会有包依赖关系的错误，所以选择最新的起点是一个明智的决定。
-```
+```bash
 sudo vi /etc/pacman.d/mirrorlist
 sudo pacman -Syu	# If something goes wrong, like "error: failed to commit transaction (conflicting fils)"
 			# Then use the following commands
@@ -40,7 +40,7 @@ sudo pacman -Syu    	# Then upgrade you system
 ### Install zsh
 Bash shell 作为最默认的基本工具，其安全稳定性毋庸置疑。但是少了点个性化，所以用zsh来满足自己的审美。  
 然后oh-my-zsh作为其模板库，用来使用别人写好的主题模板。
-```
+```bash
 sudo pacman -S vim git zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 vim .zshrc                  # 修改主题
@@ -48,7 +48,7 @@ sudo vim /etc/passwd        # 修改默认的Shell
 ```
 ### Install fcitx (小企鹅输入法)
 **请先用图形界面安装中文语言包**
-```
+```bash
 sudo pacman -S fcitx-im             # 输入法框架
 sudo pacman -S fcitx-table-extra    # 输入法
 sudo pacman -S fcitx-configtools    # 图形管理工具
@@ -61,7 +61,7 @@ vim ~/.profile
 ## 生产工具安装
 ### Install TexStudio
 详见：[**点这里，点这里**](https://techknight.eu/2015/09/30/setup-latex-environment-linux-manjaro-pacman/)
-```
+```bash
 sudo pacman -S texlive-most		# 安装TexLive的常用包
 sudo pacman -S texlive-lang		# 非英语支持
 sudo pacman -S texstudio		# 安装Tex编辑器（IDE）
@@ -70,7 +70,7 @@ sudo pacman -S texstudio		# 安装Tex编辑器（IDE）
 ### Install root(cern)
 由于官网给出的平台不包含Manjaro，所以照着Fedora的依赖包安装。库名可能不一样，我用的是zsh，会自动补全，用相近的包名安装了依赖包。
 [点这里](https://root.cern.ch/build-prerequisites#opensuse)查看依赖包。
-```
+```bash
 mkdir ~/programs/root		# root不建议安装在源码的目录里，而是建议新建一个用于安装root的新目录
 cd ~/programs/root
 cmake ~/root-xxxx		# 假设你解压源码到了root-xxxx目录
@@ -99,7 +99,7 @@ MadGraph5_aMC的具体细节请移步到[MadGraph 教程]({{ site.baseurl }}/{% 
 
 ### Install CheckMATE
 由于Manjaro系统默认使用python3，而CheckMATE使用的是python2，所以得修改默认的python版本。方法是在用户家目录下建一个`bin`目录，并把它加到系统变量$PATH的前面。之后用下面两条命令在这个bin目录下建立两个快捷方式。
-```
+```bash
 ln -s /usr/bin/python2.7 $HOME/bin/python
 ln -s /usr/bin/python2.7-config $HOME/bin/python-config
 sudo pacman -S python2-pip

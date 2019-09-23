@@ -19,7 +19,7 @@ Git命令分为底层命令 (Plumbing) 和高层命令 (Porcelain)，
 Git 是一套内容寻址文件系统（content-addressable）。  
 ![git1](http://m.qpic.cn/psb?/f886c4c6-2b9e-4782-9c70-2d94918160b2/MfkarezWtHPWA8JHxqQ8BEqu8RhLwBKRFzVEoj4899Y!/b/dEYBAAAAAAAA&bo=3gFHAQAAAAADF6s!&rf=viewer_4)
 ![git2](http://m.qpic.cn/psb?/f886c4c6-2b9e-4782-9c70-2d94918160b2/e6If04IkVwGH10vmVVF8f7oE*dof3Z1hHa1gfEPJuvg!/b/dDUBAAAAAAAA&bo=QwEJAQAAAAADF3g!&rf=viewer_4)
-```
+```bash
 git init
 git hash-object                     # 底层命令，用于存储内容
 git cat-file [-p 输出对象内容] [-t 输出对象类型]
@@ -44,12 +44,12 @@ git log --pretty=oneline    # 显示git日志
 ```
 
 ## file mode:
-    * 040000: 文件夹
-    * 100644: 普通文件
-    * 100664: 普通文件（群组可写）
-    * 100755: 可执行文件
-    * 120000: 符号链接
-    * 160000: Git链接（Gitlink）
+   * 040000: 文件夹
+   * 100644: 普通文件
+   * 100664: 普通文件（群组可写）
+   * 100755: 可执行文件
+   * 120000: 符号链接
+   * 160000: Git链接（Gitlink）
 
 ## 链接学习
 

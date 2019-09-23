@@ -50,7 +50,7 @@ Deepin(深度)系统 GNU/Linux发行版是目前操作系统国产化过程中�
 ### 使用Zsh
 Bash shell 作为最默认的基本工具，其安全稳定性及简洁性毋庸置疑。但是少了点个性化，所以用zsh来满足自己的审美, 最主要的是zsh的命令提示很好用.  
 然后oh-my-zsh作为其样式库，用来使用别人写好的主题模板。
-```
+```bash
 >sudo pacman -S vim git zsh
 >sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 >vim .zshrc
@@ -75,11 +75,11 @@ Bash shell 作为最默认的基本工具，其安全稳定性及简洁性毋庸
 **注意**:  对于使用`pip`的意义有待商议，因为基于debian的系统在`apt`软件仓库中已经收录了python的库包，可用`sudo apt install python-**`来安装相应的库包。  
 
 系统自带 python ，但是没有 pip，所以先要下载 pip ( 系统现在默认使用的 python2.7 ，所以默认 pip 为 pip2 ，如果要使用 python3 ，则要下载 pip3 )，然后更改pip源(pip2和pip3通用一个pip源文件)，再下载numpy包。命令如下：
-```
-sudo apt install python-pip
-mkidr ~/.pip
-vim ~/.pip/pip.conf     # 添加内容如下
-pip install numpy
+```bash
+>sudo apt install python-pip
+>mkidr ~/.pip
+>vim ~/.pip/pip.conf     # 添加内容如下
+>pip install numpy
 ```
 添加内容：  
 > [global]  
@@ -114,7 +114,7 @@ format=legacy
 由于Mint是基于Ubuntu的系统，所以其安装流程与[root官网](https://root.cern.ch/)给出的Ubuntu系统安装流程一致。  
 
 root程序会依赖一些库或者软件，[点这里](https://root.cern.ch/build-prerequisites#ubuntu)可以查看Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由于更新迭代，名字产生了变化，所以建议分成多次安装，以免报错。
-```
+```bash
         # 这个黑框里是root所依赖的包
         # 这几条命令易出错，可分解执行，每次少安装两个
 >sudo apt-get install git dpkg-dev cmake g++ gcc
@@ -130,7 +130,7 @@ root程序会依赖一些库或者软件，[点这里](https://root.cern.ch/buil
 >sudo apt install default-libmysqlclient-dev libcfitsio-dev libgsl1-dev
 >sudo apt install libglu1-mesa-dev libxml2-dev
 ```
-```
+```bash
 > mkdir ~/programs/root		
         # root不建议安装在源码的目录里，而是建议新建一个用于安装root的新目录
 > cd ~/programs/root            

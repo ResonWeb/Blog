@@ -26,7 +26,7 @@ tags:
 
 然后运行下面的命令:  
 
-```
+```bash
 cd ~/Downloads                  # 进入下载的压缩包所在的目录
 tar -xzvf MG5_aMC_v***.tar.gz   # 解压 "***"代表版本号
 cd ./MG5_aMC_v***               # 进入 MG5 所在的目录
@@ -35,7 +35,7 @@ cd ./MG5_aMC_v***               # 进入 MG5 所在的目录
 
 ### 使用 Pythia 和 Delphes
 MadGraph5_aMC 可实现除计算散射截面、产生事例之外更多的功能，通过使用内置的下载脚本下载插件实现。可下载用于实现**强子化**的工具 Pythia ，用于实现快速探测器模拟的工具 Delphes 或者 PGS ， 用于事例分析的工具 MadAnalysis 等。
-```
+```bash
 MG5_aMC>install pythia8         # MG5_aMC>只是提示符，代表 MG5 开启，不用输到命令行，其后面的才是命令
 MG5_aMC>install Delphes         # 注意区分大小写，在输入 install 后，可点击两次 Tab 键，显示所有的选项。
 ```
@@ -50,7 +50,7 @@ MadGraph5_aMC 可用于实现指定模型下的任意过程计算，最终给出
 #### 产生代码并运算代码
 > 技巧：单击 `Tab` 键补全命令，双击 `Tab` 键显示所有可选项  
 
-```
+```bash
 MG5_aMC>import model sm         # 导入模型文件
 MG5_aMC>generate p p > t t~     # 产生pp到tt的过程（仅为举例），语法参考 MG5 说明书附录
 MG5_aMC>display diagrams        # 显示过程费曼图
@@ -58,7 +58,7 @@ MG5_aMC>output ./process/pptt   # 生成代码，存储在当前目录下的 ./p
 MG5_aMC>launch                  # 运行代码，计算过程的截面，且产生事例
 ```
 launch 命令可以不运行，只是生成代码，不运算。当要运算时，先进入代码目录（例：./process/pptt/），再执行 `generate_events` 命令开始计算。这种方式等价于直接运行 `launch` 命令，不同之处在于这样可以多次运算代码，产生多个事例文件。
-```
+```bash
 cd ~/Downloads/MG5_aMC_***/process/pptt/    # 以实际路径为准
 ./bin/generate_events           # 开始计算
 ```
@@ -75,7 +75,7 @@ cd ~/Downloads/MG5_aMC_***/process/pptt/    # 以实际路径为准
 ### 高级操作
 这部分主要是想要说明使用 proc_card.dat 文件，来将上面的命令集成到一个批处理文件中。并没有什么高级的命令。  
 刚解压的 MG5 根目录中存在一个 proc_card.dat 文件例子，可以参照着将所有命令写在这个文件中，然后运行 MG5 时带上文件参数。
-```
+```bash
 ./bin/mg5_aMC proc_card.dat
 ```
 
