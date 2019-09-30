@@ -18,7 +18,6 @@ tags:
 - Ubuntu 系统（或者其他Linux发行版）
 - 可连网
 - 最好有界面（主要用于使用浏览器下载安装包）  
-* ok, let me see
 
 ### 下载安装  
 > 资源下载：[MadGraph5_aMC@NLO](https://launchpad.net/mg5amcnlo) in Launchpad.  

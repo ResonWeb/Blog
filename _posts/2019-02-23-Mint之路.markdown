@@ -37,7 +37,7 @@ Alt + Print     # 对当前窗口截屏
 Bash shell 作为最默认的基本工具，其安全稳定性毋庸置疑。但是少了点个性化，所以用zsh来满足自己的审美。  
 然后oh-my-zsh作为其模板库，用来使用别人写好的主题模板。
 ```bash
-sudo pacman -S vim git zsh
+sudo apt install vim git zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 vim .zshrc                  # 修改主题，我觉得 "josh" 主题挺好看的
 sudo vim /etc/passwd        # 修改默认的Shell
@@ -71,55 +71,6 @@ trusted-host = mirrors.aliyun.com
 format=legacy  
 
 ## 生产工具
-### 安装Tex
-一定要记得安装在自己的家目录里(例：`~/Programs/texlive`)，不然会出现`tlmgr`没有权限，如果用`sudo`又没有`tlmgr`命令的尴尬境地。  
-* 到清华镜像下载iso：https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/
-* 挂载好之后运行：     
- `sudo apt install perl-tk`  
-`install-tl -gui=perltk`  
-
-* 按最后提示配置环境变量
-* 设置CTAN源(华中科技大学):           `tlmgr option repository http://mirror.hust.edu.cn/CTAN/systems/texlive/tlnet`
-* 视情况使用参数：`tlmgr update [--self --all --reinstall-forcibly-removed --list]`
-* 下载安装TexStudio：   `sudo apt install texstudio`
-* 配置TexStudio里的命令路径。
-* 特别地，需要在`高级选项`-`Build`-`Build Options`里，将`Commands`目录项设置成`~/Programs/texlive/bin/x86_64-linux`，不然无法编译包含eps图片的文档。
-
-> 手动安装宏包  
-
-* 下载宏包
-* 将 .sty 或是 .cls 放入目录：`~/Programs/texlive/texmf-local/tex/latex/local`
-* 更新包库，运行命令：    `texhash`
-
-### Install root(CERN)
-由于Mint是基于Ubuntu的系统，所以其安装流程与[root官网](https://root.cern.ch/)给出的Ubuntu系统安装流程一致。  
-
-root程序会依赖一些库或者软件，[点这里](https://root.cern.ch/build-prerequisites#ubuntu)可以查看Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由于更新迭代，名字产生了变化，所以建议分成多次安装，以免报错。
-```
->sudo apt-get install git dpkg-dev cmake g++ gcc
->sudo apt-get install binutils libx11-dev libxpm-dev libxft-dev
->sudo apt-get install libxext-dev
-        # 以上为必要组件，以下为建议组件。
->sudo apt-get install gfortran libssl-dev libpcre3-dev
->sudo apt-get install xlibmesa-glu-dev libglew1.5-dev libftgl-dev
->sudo apt-get install libmysqlclient-dev libfftw3-dev cfitsio-dev
->sudo apt-get install graphviz-dev libavahi-compat-libdnssd-dev
->sudo apt-get install libldap2-dev python-dev libxml2-dev libkrb5-dev
->sudo apt-get install libgsl0-dev libqt4-dev
-(这几条命令易出错，可分解执行，每次少安装两个)
-```
-```
-> mkdir ~/programs/root		
-        # root不建议安装在源码的目录里，而是建议新建一个用于安装root的新目录
-> cd ~/programs/root            
-        # 进入这个新建的目录
-> cmake -Dminuit2=ON -Dfftw3=OFF ~/root-xxxx		 
-        # root-xxxx为你解压的目录，参数是为了安装checkmate作准备。
-> cmake --build . -- -j8 		        
-        # 注意空格，j后面的数字为CPU核数
-	    # Have a big cup of coffee, please!
-> source ~/programs/root/bin/thisroot.sh
-```
 
 ### 安装 Jaxodraw (费曼图)
 下载地址：http://jaxodraw.sourceforge.net/download/bin.html  

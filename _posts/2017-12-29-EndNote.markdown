@@ -11,7 +11,11 @@ tags:
 * content
 {:toc}
 
-系列教程之—— EndNote
+不要使用这个，不要使用这个，不要使用这个。  
+- 原因一：版权原因，*****  
+- 原因二：不好用，***
+
+用 Zotero or JabRef or Zotero+JabRef!
 <!-- more -->
 
 ## 软件说明

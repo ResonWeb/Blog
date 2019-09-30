@@ -51,7 +51,7 @@ Deepin(深度)系统 GNU/Linux发行版是目前操作系统国产化过程中�
 Bash shell 作为最默认的基本工具，其安全稳定性及简洁性毋庸置疑。但是少了点个性化，所以用zsh来满足自己的审美, 最主要的是zsh的命令提示很好用.  
 然后oh-my-zsh作为其样式库，用来使用别人写好的主题模板。
 ```bash
->sudo pacman -S vim git zsh
+>sudo apt install vim git zsh
 >sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 >vim .zshrc
     # 修改主题，我觉得 "josh" 主题挺好看的,
@@ -62,13 +62,17 @@ Bash shell 作为最默认的基本工具，其安全稳定性及简洁性毋庸
     # 安装oh-my-zsh时,会自动修改,这一步可省略
 ```
 
-### 安装星际译王
-* 安装命令： `sudo apt install stardict `  
+### 安装GoldenDict
+之前一直觉得StarDict挺好用的，老实说人家也确实很好用。弃用的原因其实是因为官网声明：由于版权原因，它们已经无限期停止更新了。并且给我们推荐了几个替代品，其中就有它们的继承者——黄金词典（GoldenDict）。它支持StarDict的词典格式，并且不止于此。所以我们仍然可以使用旧的词典包，我还搜罗到其他三个G的词典，很好用，已收藏！
+* 安装命令： `sudo apt install goldendict `  
 字典下载地址：http://download.huzheng.org/zh_CN/  
 我现在使用的字典：  
 1. 懒虫简明汉英(英汉)词典
 2. 21世纪英汉汉英双向字典
 3. 计算机词汇
+4. Oxford Advanced Learner's English-Chinese Dictionary
+5. Oxford Advanced Learners Dictionary 8th Ed.
+6. Longman Pronunciation Dictionary
 
 ### 使用python pip
 
@@ -90,59 +94,6 @@ trusted-host = mirrors.aliyun.com
 format=legacy  
 
 ## 生产工具
-### 安装Tex
-一定要记得安装在自己的家目录里(例：`~/Programs/texlive`)，不然会出现`tlmgr`没有权限，如果用`sudo`又没有`tlmgr`命令的尴尬境地。  
-* 到清华镜像下载iso：https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/
-* 挂载好之后运行：     
- `sudo apt install perl-tk`  
-`install-tl -gui=perltk`  
-
-* 按最后提示配置环境变量
-* 设置CTAN源(华中科技大学):           `tlmgr option repository http://mirror.hust.edu.cn/CTAN/systems/texlive/tlnet`
-* 视情况使用参数：`tlmgr update [--self --all --reinstall-forcibly-removed --list]`
-* 下载安装TexStudio：   `sudo apt install texstudio`
-* 配置TexStudio里的命令路径。
-* 特别地，需要在`高级选项`-`Build`-`Build Options`里，将`Commands`目录项设置成`~/Programs/texlive/bin/x86_64-linux`，不然无法编译包含eps图片的文档。
-
-> 手动安装宏包  
-
-* 下载宏包
-* 将 .sty 或是 .cls 放入目录：`~/Programs/texlive/texmf-local/tex/latex/local`
-* 更新包库，运行命令：    `texhash`
-
-### Install root(CERN)
-由于Mint是基于Ubuntu的系统，所以其安装流程与[root官网](https://root.cern.ch/)给出的Ubuntu系统安装流程一致。  
-
-root程序会依赖一些库或者软件，[点这里](https://root.cern.ch/build-prerequisites#ubuntu)可以查看Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由于更新迭代，名字产生了变化，所以建议分成多次安装，以免报错。
-```bash
-        # 这个黑框里是root所依赖的包
-        # 这几条命令易出错，可分解执行，每次少安装两个
->sudo apt-get install git dpkg-dev cmake g++ gcc
->sudo apt-get install binutils libx11-dev libxpm-dev libxft-dev
->sudo apt-get install libxext-dev
-        # 以上为必要组件，以下为建议组件。
->sudo apt-get install gfortran libssl-dev libpcre3-dev
->sudo apt-get install libglew-dev libftgl-dev libfftw3-dev
->sudo apt-get install graphviz-dev libavahi-compat-libdnssd-dev
->sudo apt-get install libldap2-dev python-dev libkrb5-dev
->sudo apt-get install libqt4-dev
-        # 以下两行第一行是新版本名字，第二行是系统自带不用安也行。
->sudo apt install default-libmysqlclient-dev libcfitsio-dev libgsl1-dev
->sudo apt install libglu1-mesa-dev libxml2-dev
-```
-```bash
-> mkdir ~/programs/root		
-        # root不建议安装在源码的目录里，而是建议新建一个用于安装root的新目录
-> cd ~/programs/root            
-        # 进入这个新建的目录
-> cmake -Dminuit2=ON -Dfftw3=OFF ~/root-xxxx		 
-        # root-xxxx为你解压的目录，参数是为了安装checkmate作准备。
-> cmake --build . -- -j8 		        
-        # 注意空格，j后面的数字为CPU核数
-	    # Have a big cup of coffee, please!
-> source ~/programs/root/bin/thisroot.sh
-```
-
 ### 安装 Jaxodraw (费曼图)
 下载地址：http://jaxodraw.sourceforge.net/download/bin.html  
 http://jaxodraw.sourceforge.net/download/axodraw4j.html  
