@@ -21,8 +21,8 @@ add the follwed line to file: `/etc/fstab`
 ## 下载与安装
 下载地址：[https://manjaro.org/download](https://manjaro.org/download/)  
 - 由于滚动更新机制，请尽可能下载最新的安装包  
-- 官方提供的桌面：Xfce4 | Gnome | KDE  
-- 官网社区版桌面推荐： Cinnamon | i3-wm  
+- 官方提供的桌面：Xfce4 / Gnome / KDE  
+- 官网社区版桌面推荐： Cinnamon / i3-wm  
 
 我使用的Xfce4桌面，轻量且定制性高。
 
@@ -47,47 +47,18 @@ add the follwed line to file: `/etc/fstab`
 SigLevel = Optional TrustedOnly
 Include = /etc/pacman.d/archlinuxcn
 ```
-3. 创建新文件`/etc/pacman.darchlinuxcn`，内容如下：
+3. 创建新文件`/etc/pacman.darchlinuxcn`，内容如下：  
 ```
-## CDN (ipv4, http, https)
-## Global CDN (no nodes in mainland China)[archlinuxcn]
 Server= https://cdn.repo.archlinuxcn.org/$arch
-
-## 浙江大学 (浙江杭州) (ipv4, ipv6, http, https)
-## Added: 2017-06-05[archlinuxcn]
 Server= https://mirrors.zju.edu.cn/archlinuxcn/$arch
-
-## 中国科学技术大学 (ipv4, ipv6, http, https)[archlinuxcn]
 Server= https://mirrors.ustc.edu.cn/archlinuxcn/$arch
-
-## 清华大学 (ipv4, ipv6, http, https)[archlinuxcn]
 Server= https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-
-## xTom (Hong Kong) (ipv4, ipv6, http, https)
-## Added: 2017-09-18
-## xTom Hong Kong Mirror[archlinuxcn]
 Server= https://mirror.xtom.com.hk/archlinuxcn/$arch
-
-## Unique Studio (湖北武汉) (ipv4, http, https)
-## Added: 2017-08-02[archlinuxcn]
 Server= https://mirrors.hustunique.com/archlinuxcn/$arch
-
-## 上海科技大学 (上海) (ipv4, http, https)
-## Added: 2016-04-07[archlinuxcn]
 Server= https://mirrors-wan.geekpie.org/archlinuxcn/$arch
-
-## 中国科学院开源软件协会 (北京) (ipv4, http)
-## Added: 2017-02-09[archlinuxcn]
 Server= http://mirrors.opencas.org/archlinuxcn/$arch
-
-## 电子科技大学凝聚网络安全工作室 (ipv4, http)
-## Added: 2016-05-28[archlinuxcn]
 Server= http://mirrors.cnssuestc.org/archlinuxcn/$arch
-
-## 网易 (ipv4, http)[archlinuxcn]
-Server= http://mirrors.163.com/archlinux-cn/$arch
-
-## 重庆大学 (ipv4, http)[archlinuxcn]
+Server= http://mirrors.163.com/archlinux-cn/$arch  
 Server= http://mirrors.cqu.edu.cn/archlinuxcn/$arch
 ```
 
@@ -125,20 +96,22 @@ sudo pacman -S libreoffice-still libreoffice-still-zh-cn
 注：小企鹅输入法说明  
 1. 安装完 fcitx 后，还需在`~/.profile`中加入输入法选项才可以。
 ```bash
-echo "export GTK_IM_MODULE=fcitx\nexport QT_IM_MODULE=fcitx\nexport XMODIFIERS=@im=fcitx" >> ~/.profile
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+export XMODIFIERS="@im=fcitx"
 ```
 2. 如果安装时, 是英文安装，则需要先将系统调成中文，重新登录才可以输入中文。  
 方法是去`/etc/locale.conf`更改`LANG=zh_CN.utf8`  
-然后在终端中运行`sudo locale-gen`
+然后在终端中运行`sudo locale-gen`  
 重启，在lightdm界面右下角修改`en_GB.utf8`为`zh_CN.utf8`  
 3. 英文系统下默认不添加拼音和五笔输入法，需要手动添加。尽量使用Fcitx自带的输入法，响应速度快。  
 也可以下载使用SogouPinYin，但是五笔输入法的候选框乱码，我也就不再折腾了。
 
 
+注：修改默认 Shell 为 zsh  
 ```bash
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-注：修改默认 Shell 为 zsh  
 1. 使用oh-my-zsh作为其模板库，使用别人写好的主题模板。  
 oh-my-zsh的仓库在github上，但是github在国内不太好用，所以有人在Gitee上准备了一个[备用仓库](https://gitee.com/mirrors/oh-my-zsh)，上面就是用的Gitee上的地址。  
 2. 用 `chsh` 命令更改自己的默认Shell, 新Shell必须是绝对地址`/usr/bin/zsh`  
@@ -149,14 +122,14 @@ oh-my-zsh的仓库在github上，但是github在国内不太好用，所以有�
 
 使用Pamac安装软件列表如下：
 1. netease-cloud-music
-2. deepin-wine-qq | deepin-wine-wechat | linuxqq
-3. wps-office-cn | foxitreader
+2. deepin-wine-qq / deepin-wine-wechat / linuxqq
+3. wps-office-cn / foxitreader
 4. texstudio
-5. zotero | JabRef
+5. zotero / JabRef
 6. latern-bin
-7. ttf-ubuntu-font-family | ttf-windows | ttf-dejavu-sans-mono-powerline 
+7. ttf-ubuntu-font-family / ttf-windows / ttf-dejavu-sans-mono-powerline 
 
-注：下载的主题，图标，字体可以直接放入`/usr/share/`目录下对应的 themes | icons | fonts 目录下。
+注：下载的主题，图标，字体可以直接放入`/usr/share/`目录下对应的 themes , icons , fonts 目录下。
 
 <!--
 ## 生产工具安装
@@ -208,7 +181,6 @@ sudo pacman -S python2-pip
 最后，在解压过的CheckMATE目录中，使用`./configure`, `make -j4`就可以编译了。 
 -->
 
-先这样，拜了个拜！
 
 > 本文由侯镖锋独立撰写  
 > 您可以自由的复制与引用
