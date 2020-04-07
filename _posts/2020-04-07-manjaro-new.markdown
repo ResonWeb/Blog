@@ -1,4 +1,4 @@
---
+---
 layout: post
 title: Manjaro新篇
 author: ResonHou
