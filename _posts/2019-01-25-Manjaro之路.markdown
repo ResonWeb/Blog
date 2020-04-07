@@ -1,4 +1,4 @@
----
+--
 layout: post
 title: Manjaro之路
 author: ResonHou
@@ -10,7 +10,12 @@ tags:
 
 * content
 {:toc}
-最终，还是选择了向现实屈服，Manjaro做桌面版，还缺少软件的支持，pacman包管理工具我还是用不习惯。我只是一个普通用户，最终还是选择Linux Mint吧。
+<!-- 最终，还是选择了向现实屈服，Manjaro做桌面版，还缺少软件的支持，pacman包管理工具我还是用不习惯。我只是一个普通用户，最终还是选择Linux Mint吧。 -->
+
+AutoMount NTFS :
+add the follwed line to file: `/etc/fstab`  
+
+> /dev/sdXX /mount/place ntfs defaults,utf8,uid=1000,gid=1000,fmask=133,dmask=022 0 0
 
 <!-- more -->
 
