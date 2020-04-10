@@ -35,7 +35,12 @@ tags:
 - 如果你有这样的毅力，直接用Root就可以了，其它的什么都是浮云。
 - MadAnalysis and CheckMATE 也要调用 Root 来实现其功能，所以照样得安Root。
 
-### MadAnalysis5 and CheckMATE
+### Python 版本
+由于 python2 已经于2020年1月1日正式停止更新，但是 MadAnalysis5 和 CheckMATE 还没有出 
+python3 版本，所以我们可以使用 Anaconda2(python2) 作为临时方案，当然 Anaconda(python3)
+也是避免多次安装 python 常用库的非常好的选择。
+
+<!-- ### MadAnalysis5 and CheckMATE -->
 
 
 ## 下载与安装  
@@ -55,7 +60,7 @@ tags:
 哎，看我博客的有多少人能明白Linux的安装，其实不过就是一个编绎-连接出可执行文件的标准C语言流程。
 顶多执行一下文件的移动操作。好吧，这里假装你知道这些东西，不知道你就跟着做就好了。
 
-#### 安装Root
+### 安装Root
 这一步是必须的，因为MadAnalysis和CheckMATE都需要Root做支撑。
 
 root程序会依赖一些库或者软件，[点这里](https://root.cern.ch/build-prerequisites#ubuntu)可以查看
@@ -85,7 +90,7 @@ Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由�
         # root-xxxx为你解压的目录，参数是为了安装checkmate作准备。
 > cmake --build . -- -j8 		        
         # 注意空格，j后面的数字为CPU核数
-	    # Have a big cup of coffee, please!
+	# Have a big cup of coffee, please!
 > source ~/programs/root/bin/thisroot.sh
         # 最后这句是为了启用root的环境变量，
         # 可将其写入Shell的初始化脚本中，见下
@@ -101,6 +106,18 @@ Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由�
         # source ~/programs/root/bin/thisroot.sh
 ```
 
+### Root In Manjaro
+Root 已经被收录进了 pacman 的 Community 仓库，我们可以直接从仓库中构建。
+这样的好处是别人已经帮我们编译过了，省去了我们再次编译的时间（也就是上面写的
+** Have a big cup of coffee **的时间）。我们下载下来的已经是编译好的二
+进制可执行文件。
+
+如果使用 Pamac 图形安装工具，可以清晰地看到 Root 的依赖库和可选依赖库， 
+我选择的有 gcc8-fortran 和 Pythia8 两个可选的依赖库。
+
+当然，我们也可以选择自行编译，但其中的依赖包库我搞不清楚，官方也没有对 ArchLinux
+系进行安装说明，所以我选择相信社区的力量。
+
 ### 安装 MadAnalysis5
 因为这个程序包是python写的，所以不需要编译，直接解压就可以用了。
 
@@ -109,7 +126,7 @@ Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由�
         # 假设在 ~/programs/madanalysis5/
 > cd ~/programs/madanalysis5
 > ./bin/ma5
-        # 如了，你已经开始运行ma5了。
+        # 好了，你已经开始运行ma5了。
         # 第一次用，它会问你用多少个内核
         # 来跑 ma5，写最大值就行。
 > exit  # 退出
