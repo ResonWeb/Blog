@@ -79,8 +79,9 @@ sudo pacman -S base-devel
 sudo pacman -S ranger atool hightlight w3m
 sudo pacman -S fcitx fcitx-configtool
 sudo pacman -S code		
-sudo pacman -S i3
 sudo pacman -S libreoffice-still libreoffice-still-zh-cn
+sudo pacman -S i3 rofi volumeicon variety picom 
+sudo pacman -S virtualbox linux54-virtualbox-host-modules
 ```
 在Manjaro中已经预装了zsh和git, 所以不必重复安装。
 以上安装也可以使用图形工具 Pamac  
@@ -89,9 +90,15 @@ sudo pacman -S libreoffice-still libreoffice-still-zh-cn
 2. 安装"base-devel"组包
 3. 安装终端文件管理器 ranger，后面三个是它的预览功能所依赖的包。
 4. 安装小企鹅输入法，这个在下面单独再说明一下。  
-5. 安装vs code，它在Pamac图形包管理器中显示为Code-OSS。  
-6. 安装图形界面的窗口管理器 i3 [选装]。  
-7. 安装 LibreOffice 套装及其汉化包。
+5. 安装vs code，它在Pamac图形包管理器中显示为Code-OSS。   
+6. 安装 LibreOffice 套装及其汉化包。
+7. 安装图形界面的窗口管理器 i3 [选装]。  
+	在i3下开启variety自动更换壁纸，volumeicon托盘音量调节，nm-applet托盘网络设置，
+	xfce4-power-manager托盘电量管理，fcitx托盘输入法。  
+	在i3下触控板如果出问题了，参看[Blog](https://blog.csdn.net/weixin_30296405/article/details/97998297),
+	或者[ArchWiki](https://wiki.archlinux.org/index.php/Touchpad_Synaptics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+8. 安装虚拟机，出问题了参看[Manjaro Wiki](https://wiki.manjaro.org/index.php?title=Virtualbox)
+
 
 注：小企鹅输入法说明  
 1. 安装完 fcitx 后，还需在`~/.profile`中加入输入法选项才可以。
@@ -124,12 +131,24 @@ oh-my-zsh的仓库在github上，但是github在国内不太好用，所以有�
 1. netease-cloud-music
 2. deepin-wine-qq / deepin-wine-wechat / linuxqq
 3. wps-office-cn / foxitreader
-4. texstudio
+4. texstudio / texmaker
 5. zotero / JabRef
+6. goldendict
 6. latern-bin
 7. ttf-ubuntu-font-family / ttf-windows / ttf-dejavu-sans-mono-powerline 
 
 注：下载的主题，图标，字体可以直接放入`/usr/share/`目录下对应的 themes , icons , fonts 目录下。
+
+## 其它
+### 系统时间
+如果刚安装的系统时间不对，可以用下面的命令同步NTP时间，并写入硬件时间，这样重新开机时间就是正确的了。
+如果是双系统，Windows 与 linux 的硬件时钟不一致，也会出现时间的问题，同样可以用这个方法修正。
+```bash
+sudo ntpdate ntp1.aliyun.com
+	# 同步NTP时间
+sudo hwclock -w
+	# 写入硬件时钟
+```
 
 <!--
 ## 生产工具安装

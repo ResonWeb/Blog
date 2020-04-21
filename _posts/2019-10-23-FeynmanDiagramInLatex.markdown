@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "在Latex中画费曼图"
+title:  在Latex中画费曼图
 categories: 学术软件教程
 tags:  
 - Latex

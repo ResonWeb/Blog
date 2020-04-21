@@ -1,4 +1,4 @@
---
+---
 layout: post
 title: Manjaro之路
 author: ResonHou

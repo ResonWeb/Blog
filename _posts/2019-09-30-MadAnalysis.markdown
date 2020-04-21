@@ -109,7 +109,7 @@ Ubuntu系统的依赖包及其安装方法。但是有一些可选择的包由�
 ### Root In Manjaro
 Root 已经被收录进了 pacman 的 Community 仓库，我们可以直接从仓库中构建。
 这样的好处是别人已经帮我们编译过了，省去了我们再次编译的时间（也就是上面写的
-** Have a big cup of coffee **的时间）。我们下载下来的已经是编译好的二
+**Have a big cup of coffee**的时间）。我们下载下来的已经是编译好的二
 进制可执行文件。
 
 如果使用 Pamac 图形安装工具，可以清晰地看到 Root 的依赖库和可选依赖库， 
